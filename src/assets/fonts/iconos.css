@@ -1,0 +1,45 @@
+.icon{
+    margin-right: 10px; 
+}
+.icon-inicio {
+    background-image: url("../images/iconos/inicio.svg");
+    background-repeat: no-repeat; 
+    height: 30px;
+    width: 30px !important;
+}
+
+.icon-locales {
+    background-image: url("../images/iconos/locales.svg");
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px !important;
+}
+
+.icon-cines {
+    background-image: url("../images/iconos/cines.svg");
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px !important;
+}
+
+.icon-eventos {
+    background-image: url("../images/iconos/eventos.svg");
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px !important;
+}
+
+.icon-productos {
+    background-image: url("../images/iconos/productos.svg");
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px !important;
+}
+
+.icon-premios {
+    background-image: url("../images/iconos/premio.svg");
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px !important;
+}
+

@@ -1,0 +1,43 @@
+
+<div class="main-wrapper" [ngClass]="{ 'main-wrapper--navigation-open': mainNavigationOpened }">
+    <nav class="main-navigation">
+      <asm-angular-sidebar-menu *ngIf="menuConfService.menu$ | async as menu" [menu]="menu" [mode]="currentSidebarMode"
+        [role]="currentRole" [search]="currentSearch" toggleIconClasses="fa fa-angle-left" iconClasses="fa fa-circle-o">
+        <div class="logo-bar d-none d-md-block" style="    color: white;
+        text-align: center;
+        font-size: 20px;">
+       CLUB PERSONAL
+        </div>
+      </asm-angular-sidebar-menu>
+    </nav>
+    <header class="main-header">
+      <div class="menu d-flex d-md-none">
+          <img src="assets/images/iconos/burger.png" height="30px" alt="" (click)="mainNavigationOpened = !mainNavigationOpened">
+      </div>
+      <div class="data-user">
+        <div class="iniciales-user">
+          DP
+        </div>
+        <div class="data">
+          Buenas tardes, <strong>{{user?.nombreCompleto}}</strong><br>
+          <span class="ultima-conexion"></span>
+        </div>
+      </div>
+      <div class="logo-principal">
+       <img src="assets/images/logo-red.png" height="40px" alt="">
+      </div>
+      <div class="logout" (click)="logout()">
+        <p>Salir</p> <img src="" alt="">
+      </div>
+    </header>
+    <main class="main-content">
+      <div class="row">
+        <div class="col-12 col-md-9 col-lg-9 outlet">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="col-3 container-accesos">
+         
+        </div>
+      </div>
+    </main>
+  </div>
