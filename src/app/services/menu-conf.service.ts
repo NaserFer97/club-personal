@@ -20,7 +20,7 @@ export class MenuConfService {
       {
         id: 'INICIO',
         label: translate('INICIO'),
-        route: '/dashboard',
+        route: '/',
         iconClasses: 'icon icon-inicio',
       },
       {
@@ -31,7 +31,12 @@ export class MenuConfService {
           {
             id: 'LOCALES_ADHERIDOS',
             label: translate('LOCALES_ADHERIDOS'),
-            route: '/dashboard'
+            route: '/locales-adheridos'
+          },
+          {
+            id: 'RUBROS',
+            label: translate('RUBROS'),
+            route: '/rubros'
           }
         ],
       },

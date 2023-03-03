@@ -42,16 +42,7 @@ export class InicioComponent implements OnInit {
   }
 
   logout() {
-    this.authService.salir().subscribe(
-      (data: any) => {
-        if (data.statusCode == 0) {
-          this.router.navigate(["/auth/login"]);
-        }
-      },
-      err => {
-        this.notificationService.error.next(err.error.message);
-      }
-    );
+    this.router.navigate(["/auth/login"])
   }
 
 }

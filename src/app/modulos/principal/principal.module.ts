@@ -6,12 +6,14 @@ import { InicioComponent } from './inicio/inicio.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarMenuModule } from 'angular-sidebar-menu';
 import { ShareModule } from '../share/share.module';
+import { LocalesAdheridosComponent } from './locales/locales-adheridos/locales-adheridos.component';
 
 
 @NgModule({
   declarations: [
     InicioComponent,
-    DashboardComponent
+    DashboardComponent,
+    LocalesAdheridosComponent
   ],
   imports: [
     CommonModule,

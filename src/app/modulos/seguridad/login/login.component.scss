@@ -1,0 +1,46 @@
+.bg{
+    background-image: url(../../../../assets/images/bg_transparent.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .fields {
+        padding: 30px;
+        border-radius: 5px;
+        border: 1px solid #eeeeee;
+        .title-login{
+            text-align: center;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 5px;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            mat-form-field {
+                margin-bottom:10px;
+                button {
+                    background-color: transparent !important;
+                    border: none !important;
+                }
+            }
+        }
+    }
+}
+
+.btn-login{
+    margin-top: 15px
+}
+
+.my-mat-hint {
+    line-height: 1.2em;
+    transform: translateY(10px);
+    font-size: 75%;
+  }

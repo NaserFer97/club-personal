@@ -19,6 +19,7 @@ import { MaterialModule } from '../material/material.module';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
+    MaterialModule,
     FormsModule
   ],
   exports: [

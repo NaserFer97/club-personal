@@ -38,7 +38,6 @@ $clubpersonal-theme: mat.define-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($clubpersonal-theme);
-@import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
 
 @font-face {
   font-family: "pulso-font";
@@ -226,6 +225,7 @@ body {
 }
 .asm-menu-anchor{
   padding: 0px 10px !important;
+  margin-bottom: 10px
 }
 .asm-menu-anchor a {
   color: white !important;
@@ -253,7 +253,6 @@ body {
 .asm-menu-anchor.asm-menu-anchor--active {
   border-right-color: #212121 !important;
   border-left-color: transparent !important;
-  background: rgba(33, 33, 33, 0.1) !important;
   border-right: 5px solid transparent;
 }
 .logo-bar {
@@ -262,6 +261,12 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+td {
+  p{
+    text-align: center;
+    margin: 0;
+  }
 }
 
 .main-header {
@@ -273,6 +278,7 @@ body {
     width: 80%;
     .data {
       color: black;
+      font-size: 1rem;
       .ultima-conexion {
         color: #7a7a7a;
       }
@@ -601,6 +607,10 @@ input.invalid {
     }
   }
 }
+.asm-menu-anchor--active a{
+  background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 5px !important;
+}
 .detalle-prestamo {
   border-radius: 5px;
   width: 100%;
@@ -916,6 +926,7 @@ table {
 }
 
 .logo-principal {
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
