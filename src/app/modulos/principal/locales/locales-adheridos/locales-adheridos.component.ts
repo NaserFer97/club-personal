@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -88,12 +89,13 @@ export class LocalesAdheridosComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
+  
 
   ngOnInit() {
 
   }
 
-  constructor() {
+  constructor(private router: Router) {
     this.dataSource = new MatTableDataSource(this.data);
   }
 
@@ -108,4 +110,11 @@ export class LocalesAdheridosComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  crearLocal() {
+    this.router.navigate(['/locales/crear']);
+  }
+
+  
+  
 }

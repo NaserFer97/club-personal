@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LocalesCrearComponent } from './modulos/principal/locales/locales-adheridos/locales-crear/locales-crear.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,9 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./modulos/principal/principal.module').then(m => m.PrincipalModule)
+  },
+  {
+    path: 'locales/crear', component: LocalesCrearComponent
   }
 ];
 @NgModule({

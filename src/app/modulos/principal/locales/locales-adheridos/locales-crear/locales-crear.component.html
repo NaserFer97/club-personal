@@ -1,0 +1,68 @@
+<div [formGroup]="myForm">
+    
+    <h1>Datos del Local Adherido</h1>
+    <label><strong>Local</strong><span class="required"  *ngIf="!formControlCompleted('nombre')" >*</span></label>  <br>
+    <input style="width: 30em;height: 2em;" type="text" formControlName="nombre" > <br><br>
+    <mat-form-field>
+        <mat-label style="font: bolder; font-size: 16px;" ><strong>Rubro</strong><span class="required"  *ngIf="!formControlCompleted('rubro')" >*</span></mat-label>
+        <mat-select style="font-size: 16px;" formControlName="rubro"  >
+            <mat-option value="entretenimiento">Entretenimiento</mat-option>
+            <mat-option value="hogar">Hogar</mat-option>
+            <mat-option value="gastronomia">Gastronomia</mat-option>
+            <mat-option value="tecnologia">Tecnologia</mat-option>
+        </mat-select>
+    </mat-form-field> <br>
+
+    <label><strong>Sitio Web</strong></label> <br>
+    <input  style="width: 30em;height: 2em;" type="text" formControlName="sitioWeb"> <br><br>
+
+    <mat-form-field appearance="fill">
+        <mat-label><strong>Fecha</strong> <span class="required"  *ngIf="!formControlCompleted('fecha')" >*</span></mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <section class="example-section">
+        <mat-checkbox class="example-margin" formControlName="destacado">Destacado</mat-checkbox> <br>
+        <mat-checkbox class="example-margin" formControlName="mostrarEnApp">Mostrar en App</mat-checkbox>
+    </section>
+    <br>
+
+    <form class="example-form">
+        <mat-form-field style="width: 30em;" class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" placeholder="pat@ejemplo.com">
+            <mat-hint></mat-hint>
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Porfavor ingrese un mail valido
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email es <strong>obligatorio</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+
+
+
+    <mat-form-field>
+        <mat-label style="font: bolder; font-size: 16px;"><strong>Tipo Local</strong><span class="required"  *ngIf="!formControlCompleted('tipoLocal')" >*</span></mat-label>
+        <mat-select style="font-size: 16px;" formControlName="tipoLocal">
+            <mat-option value="comercio">Comercio</mat-option>
+            <mat-option value="evento">Evento</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div style="margin-top: 5em;">
+        <button style="background-color: #468ec6; color: white;"
+    mat-raised-button class="ml-auto"
+    [disabled]="!myForm.valid"
+    (click)="guardar()">
+    Guardar
+</button>
+        <button style="background-color: #d64d52; color: white; margin-left: 0.5em;" mat-raised-button class="ml-auto"
+            (click)="cancelar()">Cancelar</button>
+
+    </div>
+    
+
+    
+</div>
