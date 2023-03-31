@@ -13,6 +13,7 @@ export class LocalesCrearComponent implements OnInit {
   myForm: FormGroup; // Formulario
   emailFormControl: FormControl = new FormControl('', [Validators.required, Validators.email]); // Validador de correo electrónico
   formInvalid = false; // Bandera para verificar si el formulario es inválido
+  loading = false;
 
   // Funciones para obtener los controles del formulario
   get nombreControl() { return this.myForm.get('nombre'); }
@@ -45,10 +46,18 @@ export class LocalesCrearComponent implements OnInit {
       const formValues = this.myForm.getRawValue(); // Obtener los valores del formulario
       const jsonStr = JSON.stringify(formValues); // Convertir los valores del formulario a formato JSON
       console.log(jsonStr); // Imprimir en consola el JSON con los valores del formulario
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.router.navigateByUrl('locales-adheridos'); 
+      }, 1000);
+      
+      
 
     } else { // Si el formulario es inválido
       this.formInvalid = true; // Establecer la bandera formInvalid como verdadera
       this.myForm.markAllAsTouched(); // Marcar todos los controles del formulario como tocados (para mostrar los mensajes de error)
+
     }
   }
 
@@ -61,11 +70,8 @@ export class LocalesCrearComponent implements OnInit {
   formControlCompleted(controlName: string): boolean | null {
     const control = this.myForm.get(controlName); // Obtener el control del formulario
     return control && control.valid && (control.value !== null && control.value !== ''); // Verificar si el control existe, es válido y tiene un valor
+    
   }
 
-  // Función para volver atrás
-  volver() {
-    if (this.myForm.valid) // Si el formulario es válido
-      this.router.navigateByUrl('locales-adheridos'); // Navegar a la ruta "locales-adheridos"
-  }
+  
 }

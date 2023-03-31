@@ -11,13 +11,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
     InicioComponent,
     DashboardComponent,
     LocalesAdheridosComponent,
-    LocalesCrearComponent
+    LocalesCrearComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
