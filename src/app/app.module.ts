@@ -8,6 +8,9 @@ import { TranslocoRootModule } from './modulos/transloco-root/transloco-root.mod
 import { GsformatPipe } from './pipes/gsformat.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RemoveRequiredAsteriskDirective } from './remove-required-asterisk.directive';
+import { CommonModule } from '@angular/common';
+
+
 
 
 @NgModule({
@@ -23,6 +26,7 @@ import { RemoveRequiredAsteriskDirective } from './remove-required-asterisk.dire
     TranslocoRootModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
+    CommonModule
     
     
   ],

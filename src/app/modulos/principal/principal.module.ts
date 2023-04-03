@@ -12,6 +12,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoaderComponent } from './loader/loader.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { LoaderComponent } from './loader/loader.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    NgxSpinnerModule
   ]
 })
 export class PrincipalModule { }

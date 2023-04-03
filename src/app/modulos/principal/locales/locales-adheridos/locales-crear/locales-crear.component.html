@@ -5,24 +5,26 @@
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Nombre del Local</mat-label>
         <input matInput #input formControlName="nombre">
-        <mat-error *ngIf="formControlCompleted('nombre') === false && nombreControl?.touched"></mat-error>
-    </mat-form-field> <br>
+        <mat-error *ngIf="myForm.invalid">{{getErrorMessage('nombre')}}</mat-error>
+
+    </mat-form-field> <br><br>
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Rubro</mat-label>
+        <mat-error *ngIf="myForm.invalid">{{getErrorMessage('rubro')}}</mat-error>
         <mat-select formControlName="rubro">
             <mat-option value="entretenimiento">Entretenimiento</mat-option>
             <mat-option value="hogar">Hogar</mat-option>
             <mat-option value="gastronomia">Gastronomia</mat-option>
             <mat-option value="tecnologia">Tecnologia</mat-option>
         </mat-select>
-       
-    </mat-form-field> <br>
+
+    </mat-form-field> <br><br>
 
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label>Sitio web</mat-label>
         <input matInput #input formControlName="sitioWeb">
 
-    </mat-form-field> <br>
+    </mat-form-field> <br><br>
 
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Fecha</mat-label>
@@ -36,36 +38,45 @@
     </section>
     <br>
 
-    <div class="example-container" >
+    <div class="example-container">
         <mat-form-field appearance="fill" style="width: 30em;">
-          <mat-label class="inputText">Email</mat-label>
-          <input matInput [formControl]="emailFormControl" placeholder="Email">
-          <mat-error *ngIf="emailFormControl instanceof AbstractControl && emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-            Por favor ingrese un email válido.
-        </mat-error>
-        <mat-error *ngIf="emailFormControl instanceof AbstractControl && emailFormControl.hasError('required')">
-            El email es obligatorio.
-        </mat-error>
+            <mat-label class="inputText">Email</mat-label>
+            <input matInput [formControl]="emailFormControl" placeholder="Email">
+            <mat-error style="font-size: 16px;"
+                [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched)}">
+                <span>
+                    Por favor ingrese un email válido.
+                </span>
+                <br>
+                <span>
+                    El email es obligatorio.
+                </span>
+            </mat-error>
+            <mat-error style="font-size: 16px;"
+                [ngClass]="{'error': emailFormControl.hasError('required') && (emailFormControl.dirty || emailFormControl.touched)}">
+
+            </mat-error>
         </mat-form-field>
-      </div> <br>
+    </div> <br> <br>
 
 
 
-      <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Tipo Local</mat-label>
+        <mat-error *ngIf="myForm.invalid">{{getErrorMessage('tipoLocal')}}</mat-error>
         <mat-select formControlName="tipoLocal">
             <mat-option value="comercio">Comercio</mat-option>
             <mat-option value="evento">Evento</mat-option>
         </mat-select>
-       
+
     </mat-form-field>
     <div style="margin-top: 5em;">
         <button style="background-color: #468ec6; color: white;" mat-raised-button class="ml-auto" (click)="guardar()">
             Guardar
         </button>
         <button style="background-color: #d64d52; color: white; margin-left: 0.5em;" mat-raised-button class="ml-auto"
-            (click)="cancelar()">Cancelar</button>
-            <app-loader *ngIf="loading"></app-loader>
+        (click)="cancelar()">Cancelar</button>
+<ngx-spinner></ngx-spinner>
 
     </div>
 
