@@ -1,23 +1,22 @@
-<div [formGroup]="myForm" (ngSubmit)="guardar()">
+<div [formGroup]="form" (ngSubmit)="guardar()">
 
     <h1>Datos del Local Adherido</h1>
 
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Nombre del Local</mat-label>
         <input matInput #input formControlName="nombre">
-        <mat-error *ngIf="myForm.invalid">{{getErrorMessage('nombre')}}</mat-error>
-
-    </mat-form-field> <br><br>
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
+    </mat-form-field>
+    <br><br>
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Rubro</mat-label>
-        <mat-error *ngIf="myForm.invalid">{{getErrorMessage('rubro')}}</mat-error>
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('rubro',form)}}</mat-error>
         <mat-select formControlName="rubro">
             <mat-option value="entretenimiento">Entretenimiento</mat-option>
             <mat-option value="hogar">Hogar</mat-option>
             <mat-option value="gastronomia">Gastronomia</mat-option>
             <mat-option value="tecnologia">Tecnologia</mat-option>
         </mat-select>
-
     </mat-form-field> <br><br>
 
     <mat-form-field style="width: 30em;" appearance="fill">
@@ -31,52 +30,39 @@
         <input matInput [matDatepicker]="picker" formControlName="fecha">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('fecha',form)}}</mat-error>
     </mat-form-field>
     <section class="example-section">
         <mat-checkbox class="example-margin" formControlName="destacado">Destacado</mat-checkbox> <br>
         <mat-checkbox class="example-margin" formControlName="mostrarEnApp">Mostrar en App</mat-checkbox>
     </section>
-    <br>
+    <br><br>
 
     <div class="example-container">
         <mat-form-field appearance="fill" style="width: 30em;">
             <mat-label class="inputText">Email</mat-label>
-            <input matInput [formControl]="emailFormControl" placeholder="Email">
-            <mat-error style="font-size: 16px;"
-                [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched)}">
-                <span>
-                    Por favor ingrese un email válido.
-                </span>
-                <br>
-                <span>
-                    El email es obligatorio.
-                </span>
-            </mat-error>
-            <mat-error style="font-size: 16px;"
-                [ngClass]="{'error': emailFormControl.hasError('required') && (emailFormControl.dirty || emailFormControl.touched)}">
-
-            </mat-error>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="form.invalid">{{getErrorMessage('email',form)}}</mat-error>
         </mat-form-field>
-    </div> <br> <br>
+    </div> <br> 
 
 
 
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Tipo Local</mat-label>
-        <mat-error *ngIf="myForm.invalid">{{getErrorMessage('tipoLocal')}}</mat-error>
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('tipoLocal',form)}}</mat-error>
         <mat-select formControlName="tipoLocal">
             <mat-option value="comercio">Comercio</mat-option>
             <mat-option value="evento">Evento</mat-option>
         </mat-select>
 
     </mat-form-field>
-    <div style="margin-top: 5em;">
-        <button style="background-color: #468ec6; color: white;" mat-raised-button class="ml-auto" (click)="guardar()">
+    <div style="margin-top: 3em;" class="button-container">
+        <button  class="btn btn-primary" (click)="guardar()">
             Guardar
         </button>
-        <button style="background-color: #d64d52; color: white; margin-left: 0.5em;" mat-raised-button class="ml-auto"
-        (click)="cancelar()">Cancelar</button>
-<ngx-spinner></ngx-spinner>
+        <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">volver</button>
+
 
     </div>
 
