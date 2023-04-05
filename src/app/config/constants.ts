@@ -37,15 +37,16 @@ export const setData = function (key: any, data: any) {
 
 export const getErrorMessage = function (controlName: string, form: FormGroup, isEmailControl?: boolean) {
     const control = form.controls[controlName];
-
+  
     if (control.hasError('required')) {
-        return 'Campo obligatorio';
+      return 'Campo obligatorio';
     }
-    else if (control.hasError('email')) {
-        return 'Email inválido';
+    else if ( control.hasError('email')) {
+      return 'Email inválido';
     }
-
+    
     else {
-        return '';
+      return '';
     }
-};
+  };
+  

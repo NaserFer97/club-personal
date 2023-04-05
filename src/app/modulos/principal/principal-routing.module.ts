@@ -5,6 +5,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { LocalesAdheridosComponent } from './locales/locales-adheridos/locales-adheridos.component';
 import { LocalesCrearComponent } from './locales/locales-adheridos/locales-crear/locales-crear.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -14,7 +15,8 @@ const routes: Routes = [
       { path: 'locales-adheridos', component: LocalesAdheridosComponent },
       {
         path: 'locales/crear', component: LocalesCrearComponent
-      }
+      },
+      { path: 'locales/editar/:id', component: LocalesCrearComponent }
     ]
   },
 ];

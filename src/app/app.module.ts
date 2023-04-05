@@ -9,6 +9,8 @@ import { GsformatPipe } from './pipes/gsformat.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RemoveRequiredAsteriskDirective } from './remove-required-asterisk.directive';
 import { CommonModule } from '@angular/common';
+import { ConfirmDialogComponent } from './modulos/principal/locales/locales-adheridos/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -17,7 +19,8 @@ import { CommonModule } from '@angular/common';
   declarations: [
     AppComponent,
     GsformatPipe,
-    RemoveRequiredAsteriskDirective
+    RemoveRequiredAsteriskDirective,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { CommonModule } from '@angular/common';
     TranslocoRootModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
-    CommonModule
+    CommonModule,
+    MatDialogModule
     
     
   ],

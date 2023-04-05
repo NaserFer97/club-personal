@@ -3,6 +3,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { LocalService } from '../../../../services/locales-crear/local.service';
+
+
+
+
 
 
 @Component({
@@ -12,8 +19,7 @@ import { Router } from '@angular/router';
 })
 export class LocalesAdheridosComponent implements OnInit {
 
-  displayedColumns: string[] = ['nombre', 'rubro', 'tipo', 'web'];
-  dataSource: MatTableDataSource<any>;
+  displayedColumns: string[] = ['nombre', 'rubro', 'tipo', 'acciones'];  dataSource: MatTableDataSource<any>;
   data: any = [{
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
@@ -93,10 +99,24 @@ export class LocalesAdheridosComponent implements OnInit {
 
   ngOnInit() {
 
+    this.localService.updatedLocal$.subscribe((updatedLocal) => {
+      if (updatedLocal) {
+        this.updateLocal(updatedLocal);
+      }
+    });
+    
+
   }
 
-  constructor(private router: Router) {
-    this.dataSource = new MatTableDataSource(this.data);
+  constructor(private router: Router, private dialog: MatDialog, private localService: LocalService) {
+    this.dataSource = new MatTableDataSource(this.data,);
+    window.addEventListener('popstate', this.handlePopState.bind(this));
+  }
+  
+  handlePopState(event: PopStateEvent) {
+    if (event.state && event.state.local) {
+      this.updateLocal(event.state.local);
+    }
   }
 
   ngAfterViewInit() {
@@ -115,6 +135,46 @@ export class LocalesAdheridosComponent implements OnInit {
     this.router.navigate(['/locales/crear']);
   }
 
+  editarLocal(row: any) {
+    this.router.navigate(['/locales/crear'], { state: { local: row } });
+  }
+  updateLocal(updatedLocal: any) {
+    const index = this.data.findIndex((local: any) => local.nombre === updatedLocal.nombre);
+    if (index > -1) {
+      this.data[index] = updatedLocal;
+      this.updateDataSource();
+    }
+  }
+
+  borrarLocal(row: any) {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        title: 'Confirmación',
+        message: '¿Está seguro de que desea eliminar este local?'
+      }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Aquí coloque el código para eliminar el local
+        console.log('Local eliminado:', row);
+        this.removeLocal(row);
+      }
+    });
+  }
+  
+  removeLocal(row: any) {
+    const index = this.data.findIndex((local: any) => local === row);
+    if (index > -1) {
+      this.data.splice(index, 1);
+      this.updateDataSource();
+    }
+  }
+  
+  updateDataSource() {
+    this.dataSource.data = this.data;
+  }
+ 
   
   
 }
