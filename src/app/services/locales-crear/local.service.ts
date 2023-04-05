@@ -13,13 +13,13 @@ export class LocalService {
   private updatedLocalSource = new BehaviorSubject<any>(null);
   updatedLocal$: Observable<any> = this.updatedLocalSource.asObservable();
 
-  createLocal(localData: any): Observable<any> {
+  crearLocal(localData: any): Observable<any> {
     console.warn('Recuerda actualizar la apiUrl en los archivos de entorno cuando esté disponible');
     // return this.http.post<any>(this.apiUrl, localData); // Descomentar  con  la URL real de la API
     return of({ success: true }); // Retornar un valor temporal mientras la apiUrl no esté disponible
   }
 
-  updateLocal(localId: string, formData: any): Observable<any> {
+  actualizarLocal(localId: string, formData: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${localId}`, formData);
   }
   updateLocalInView(local: any) {

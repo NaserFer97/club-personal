@@ -69,10 +69,10 @@ guardar() {
 
     if (this.localId) {
       // Si hay un localId, actualiza el local existente
-      request$ = this.localService.updateLocal(this.localId.toString(), formValues);
+      request$ = this.localService.actualizarLocal(this.localId.toString(), formValues);
     } else {
       // Si no hay localId, crea un nuevo local
-      request$ = this.localService.createLocal(formValues);
+      request$ = this.localService.crearLocal(formValues);
     }
 
     // Añadir un retraso artificial de 500 ms para simular una carga
