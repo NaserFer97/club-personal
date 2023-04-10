@@ -7,13 +7,12 @@ import { LocalService } from 'src/app/services/locales-crear/local.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
-
 @Component({
-  selector: 'app-locales-crear',
-  templateUrl: './locales-crear.component.html',
-  styleUrls: ['./locales-crear.component.scss']
+  selector: 'app-rubros-crear',
+  templateUrl: './rubros-crear.component.html',
+  styleUrls: ['./rubros-crear.component.scss']
 })
-export class LocalesCrearComponent implements OnInit {
+export class RubrosCrearComponent implements OnInit {
 
   form: FormGroup;
   formInvalid = false;
@@ -104,6 +103,6 @@ guardar() {
 
 
   volver() {
-    this.router.navigateByUrl('locales-adheridos');
+    this.router.navigateByUrl('locales-rubros');
   }
 }

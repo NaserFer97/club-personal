@@ -36,7 +36,7 @@ export class MenuConfService {
           {
             id: 'RUBROS',
             label: translate('RUBROS'),
-            route: '/rubros'
+            route: '/locales-rubros'
           }
         ],
       },

@@ -4,8 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { LocalesAdheridosComponent } from './locales/locales-adheridos/locales-adheridos.component';
 import { LocalesCrearComponent } from './locales/locales-adheridos/locales-crear/locales-crear.component';
-
-
+import { LocalesRubrosComponent } from './locales/locales-rubros/locales-rubros.component';
+import { RubrosCrearComponent } from './locales/locales-rubros/rubros-crear/rubros-crear.component';
 const routes: Routes = [
   {
     path: '',
@@ -13,10 +13,12 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: 'locales-adheridos', component: LocalesAdheridosComponent },
-      {
-        path: 'locales/crear', component: LocalesCrearComponent
-      },
-      { path: 'locales/editar/:id', component: LocalesCrearComponent }
+      { path: 'locales/crear', component: LocalesCrearComponent},
+      { path: 'locales/editar/:id', component: LocalesCrearComponent },
+      { path: 'locales-rubros', component: LocalesRubrosComponent },
+      { path: 'rubros/crear', component: RubrosCrearComponent },
+
+
     ]
   },
 ];

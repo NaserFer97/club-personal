@@ -4,8 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from '../../../../confirm-dialog/confirm-dialog.component';
-import { LocalService } from '../../../../services/locales-crear/local.service';
+import { LocalService } from 'src/app/services/locales-crear/local.service';
+import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
 
 
 
@@ -99,25 +99,16 @@ export class LocalesAdheridosComponent implements OnInit {
 
   ngOnInit() {
 
-    this.localService.updatedLocal$.subscribe((updatedLocal) => {
-      if (updatedLocal) {
-        this.updateLocal(updatedLocal);
-      }
-    });
-    
+ 
 
   }
 
   constructor(private router: Router, private dialog: MatDialog, private localService: LocalService) {
     this.dataSource = new MatTableDataSource(this.data,);
-    window.addEventListener('popstate', this.handlePopState.bind(this));
+    ;
   }
   
-  handlePopState(event: PopStateEvent) {
-    if (event.state && event.state.local) {
-      this.updateLocal(event.state.local);
-    }
-  }
+ 
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator!;
@@ -131,22 +122,16 @@ export class LocalesAdheridosComponent implements OnInit {
     }
   }
 
-  crearLocal() {
+  crear() {
     this.router.navigate(['/locales/crear']);
   }
 
-  editarLocal(row: any) {
+  editar(row: any) {
     this.router.navigate(['/locales/crear'], { state: { local: row } });
   }
-  updateLocal(updatedLocal: any) {
-    const index = this.data.findIndex((local: any) => local.nombre === updatedLocal.nombre);
-    if (index > -1) {
-      this.data[index] = updatedLocal;
-      this.updateDataSource();
-    }
-  }
+ 
 
-  borrarLocal(row: any) {
+  borrar(row: any) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         title: 'Confirmación',
@@ -158,12 +143,12 @@ export class LocalesAdheridosComponent implements OnInit {
       if (result) {
         // Aquí coloque el código para eliminar el local
         console.log('Local eliminado:', row);
-        this.removeLocal(row);
+        this.borrarElemento(row);
       }
     });
   }
   
-  removeLocal(row: any) {
+  borrarElemento(row: any) {
     const index = this.data.findIndex((local: any) => local === row);
     if (index > -1) {
       this.data.splice(index, 1);

@@ -12,7 +12,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import { LocalesRubrosComponent } from './locales/locales-rubros/locales-rubros.component';
+import { RubrosCrearComponent } from './locales/locales-rubros/rubros-crear/rubros-crear.component';
 
 
 
@@ -25,6 +26,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     DashboardComponent,
     LocalesAdheridosComponent,
     LocalesCrearComponent,
+    LocalesRubrosComponent,
+    RubrosCrearComponent,
     
   
   ],

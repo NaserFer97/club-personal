@@ -1,55 +1,47 @@
 .mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
-    background-color: #121212 !important;
+  background-color: #121212 !important;
 }
 
-
-
-
 .btn {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 12px 22px;
-    margin-bottom: 4px;
-    letter-spacing: 2.2px;
-    border-radius: 0px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    word-wrap: break-word;
-    white-space: normal !important;
-    
-  }
-  .btn:active {
-    transform: translateY(4px);
-  }
-  .btn-primary {
-    background-color: #26b462 !important;
-    border: 1px solid #26b462;
-  }
-  .btn-primary:hover {
-    background-color: #239753;
-    border: 1px solid #239753;
-  }
-  .btn-primary:active {
-    transform: translateY(4px);
-  }
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px 22px;
+  margin-bottom: 4px;
+  letter-spacing: 2.2px;
+  border-radius: 0px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  word-wrap: break-word;
+  white-space: normal !important;
+  width: 150px;
+}
 
-  ///////////////////////////SECONDARY BTN////////////////////////////////////////////////////
-  
-  .btn:active {
-    transform: translateY(4px);
-  }
-  .btn-secondary {
-    background-color: #6a737a;
-    border: 1px solid #6a737a;
-    color: white;
-    
-  }
-  .btn-secondary:hover {
-    background-color: #6a737a;
-    border: 1px solid #6a737a;
-  }
-  .btn-secondary:active {
-    transform: translateY(4px);
-  }
+.btn:active {
+  transform: translateY(4px);
+}
+
+.btn-primary {
+  background-color: #26b462 !important;
+  border: 1px solid #26b462;
+}
+
+.btn-primary:active {
+  transform: translateY(4px);
+}
+
+///////////////////////////SECONDARY BTN////////////////////////////////////////////////////
+
+.btn:active {
+  transform: translateY(4px);
+}
+
+.btn-secondary {
+  background-color: #6a737a;
+  border: 1px solid #6a737a;
+  color: white;
+}
+
+.btn-secondary:active {
+  transform: translateY(4px);
+}

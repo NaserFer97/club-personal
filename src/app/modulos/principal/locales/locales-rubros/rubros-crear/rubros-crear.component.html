@@ -1,0 +1,37 @@
+<div [formGroup]="form" (ngSubmit)="guardar()">
+
+    <h1> Rubro </h1>
+
+    <mat-form-field style="width: 30em;" appearance="fill">
+        <mat-label class="inputText">Descripcion del local</mat-label>
+        <input matInput #input formControlName="nombre">
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field style="width: 30em;" appearance="fill">
+        <mat-label class="inputText">Codigo</mat-label>
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('rubro',form)}}</mat-error>
+        <mat-select formControlName="rubro">
+            <mat-option value="entretenimiento">Entretenimiento</mat-option>
+            <mat-option value="hogar">Hogar</mat-option>
+            <mat-option value="gastronomia">Gastronomia</mat-option>
+            <mat-option value="tecnologia">Tecnologia</mat-option>
+        </mat-select>
+    </mat-form-field> <br><br>
+
+   
+
+
+
+    <div style="margin-top: 3em;" class="button-container">
+        <button  class="btn btn-primary" (click)="guardar()">
+            Guardar
+        </button>
+        <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">volver</button>
+
+
+    </div>
+
+
+
+</div>
