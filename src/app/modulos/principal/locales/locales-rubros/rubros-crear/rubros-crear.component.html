@@ -7,7 +7,7 @@
         <input matInput #input formControlName="nombre">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
     </mat-form-field>
-    <br><br>
+    <div class="mb-3"></div>
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Codigo</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('rubro',form)}}</mat-error>
@@ -17,7 +17,7 @@
             <mat-option value="gastronomia">Gastronomia</mat-option>
             <mat-option value="tecnologia">Tecnologia</mat-option>
         </mat-select>
-    </mat-form-field> <br><br>
+    </mat-form-field> 
 
    
 
@@ -27,7 +27,7 @@
         <button  class="btn btn-primary" (click)="guardar()">
             Guardar
         </button>
-        <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">volver</button>
+        <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">Volver</button>
 
 
     </div>

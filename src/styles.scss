@@ -972,6 +972,10 @@ table {
 .button-filtro {
   float: left;
 }
+.btn-crear{
+  background-color: #62b865;
+  color: white;
+}
 /*
 ####################################################
 M E D I A  Q U E R I E S
@@ -1075,10 +1079,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     display: none;
   }
 
-  .btn-crear{
-    background-color: #62b865;
-    color: white;
-  }
+ 
 
 }
 
