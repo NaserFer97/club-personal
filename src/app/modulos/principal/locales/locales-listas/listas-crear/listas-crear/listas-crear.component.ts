@@ -20,7 +20,8 @@ export class ListasCrearComponent implements OnInit {
   form: FormGroup;
   formInvalid = false;
   getErrorMessage: any = getErrorMessage;
- 
+  selectedTabIndex: number;
+
 
 
   get nombreControl() { return this.form.get('nombre'); }
@@ -31,6 +32,7 @@ export class ListasCrearComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private localService: LocalService, private route: ActivatedRoute) {
   this.form = this.fb.group({});
+  this.selectedTabIndex = this.isListasCrearActive() ? 0 : 1
 }
 
 ngOnInit(): void {
@@ -43,6 +45,7 @@ ngOnInit(): void {
     mostrarEnApp: [false],
     email: ['', [Validators.required, Validators.email]],
     tipoLocal: ['', Validators.required],
+   
   });
 
   const local = history.state.local;
@@ -123,5 +126,15 @@ guardar() {
 
   isListasBeneficiosActive(): boolean {
     return this.router.isActive('/listas-beneficios', false);
+  }
+  onTabChange(event: MatTabChangeEvent) {
+    switch (event.index) {
+      case 0:
+        this.goToListasCrear();
+        break;
+      case 1:
+        this.goToListasBeneficios();
+        break;
+    }
   }
 }

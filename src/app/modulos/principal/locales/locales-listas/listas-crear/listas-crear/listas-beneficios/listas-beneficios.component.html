@@ -1,9 +1,22 @@
 
 <div class="nav-buttons">
-    <mat-toolbar>
-      <button mat-button routerLink="/listas/crear" [ngClass]="{'active-route': isListasCrearActive()}">Listas Crear</button>
-      <span class="spacer"></span>
-      <button mat-button routerLink="/listas-beneficios" [ngClass]="{'active-route': isListasBeneficiosActive()}">Listas Beneficios</button>
-    </mat-toolbar>
-  </div>
+  <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="selectedTabIndex">
+    <mat-tab label="Listas ">
+      <ng-template matTabContent>
+        <!-- Contenido del componente Listas Crear -->
+
+
+
+
+        
+      </ng-template>
+    </mat-tab>
+    <mat-tab label=" Beneficios">
+      <ng-template matTabContent>
+        <router-outlet name="listasBeneficios"></router-outlet>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
   
