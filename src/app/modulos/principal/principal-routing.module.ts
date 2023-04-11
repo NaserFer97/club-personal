@@ -6,6 +6,10 @@ import { LocalesAdheridosComponent } from './locales/locales-adheridos/locales-a
 import { LocalesCrearComponent } from './locales/locales-adheridos/locales-crear/locales-crear.component';
 import { LocalesRubrosComponent } from './locales/locales-rubros/locales-rubros.component';
 import { RubrosCrearComponent } from './locales/locales-rubros/rubros-crear/rubros-crear.component';
+import { LocalesListasComponent } from './locales/locales-listas/locales-listas.component';
+import { ListasCrearComponent } from './locales/locales-listas/listas-crear/listas-crear/listas-crear.component';
+import { ListasBeneficiosComponent } from './locales/locales-listas/listas-crear/listas-crear/listas-beneficios/listas-beneficios.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -17,7 +21,10 @@ const routes: Routes = [
       { path: 'locales/editar/:id', component: LocalesCrearComponent },
       { path: 'locales-rubros', component: LocalesRubrosComponent },
       { path: 'rubros/crear', component: RubrosCrearComponent },
-
+      { path: 'locales-listas', component: LocalesListasComponent },
+      { path: 'listas/crear', component: ListasCrearComponent },
+      { path: 'listas-beneficios', component: ListasBeneficiosComponent },
+      
 
     ]
   },

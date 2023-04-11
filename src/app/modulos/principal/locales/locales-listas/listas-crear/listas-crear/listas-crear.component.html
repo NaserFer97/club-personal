@@ -1,0 +1,35 @@
+<div class="nav-buttons">
+    <mat-toolbar>
+      <button mat-button (click)="goToListasCrear()" >Listas Crear</button>
+      <span class="spacer"></span>
+      <button mat-button (click)="goToListasBeneficios()" >Listas Beneficios</button>
+    </mat-toolbar>
+  </div>
+  
+  <div [formGroup]="form" (ngSubmit)="guardar()">
+  
+    <h1> Agregar lista </h1>
+  
+    <mat-form-field style="width: 30em;" appearance="fill">
+      <mat-label class="inputText">Nombre</mat-label>
+      <input matInput #input formControlName="nombre">
+      <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
+    </mat-form-field>
+    <div class="mb-3"></div>
+    <form class="example-form">
+          
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+    </form>
+  
+    <div style="margin-top: 3em;" class="button-container">
+      <button class="btn btn-primary" (click)="guardar()">
+        Guardar
+      </button>
+      <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">Volver</button>
+    </div>
+   
+  </div>
+  

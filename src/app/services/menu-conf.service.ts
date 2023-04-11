@@ -37,7 +37,13 @@ export class MenuConfService {
             id: 'RUBROS',
             label: translate('RUBROS'),
             route: '/locales-rubros'
+          },
+          {
+            id: 'Listas',
+            label: translate('Listas'),
+            route: '/locales-listas'
           }
+          
         ],
       },
       {

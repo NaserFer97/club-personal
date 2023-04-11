@@ -14,6 +14,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LocalesRubrosComponent } from './locales/locales-rubros/locales-rubros.component';
 import { RubrosCrearComponent } from './locales/locales-rubros/rubros-crear/rubros-crear.component';
+import { LocalesListasComponent } from './locales/locales-listas/locales-listas.component';
+import { ListasCrearComponent } from './locales/locales-listas/listas-crear/listas-crear/listas-crear.component';
+import { ListasBeneficiosComponent } from './locales/locales-listas/listas-crear/listas-crear/listas-beneficios/listas-beneficios.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -28,6 +33,9 @@ import { RubrosCrearComponent } from './locales/locales-rubros/rubros-crear/rubr
     LocalesCrearComponent,
     LocalesRubrosComponent,
     RubrosCrearComponent,
+    LocalesListasComponent,
+    ListasCrearComponent,
+    ListasBeneficiosComponent,
     
   
   ],
@@ -40,7 +48,9 @@ import { RubrosCrearComponent } from './locales/locales-rubros/rubros-crear/rubr
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatToolbarModule,
+    MatTabsModule
   ]
 })
 export class PrincipalModule { }
