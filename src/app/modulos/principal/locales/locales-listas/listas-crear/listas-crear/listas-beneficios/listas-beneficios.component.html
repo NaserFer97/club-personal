@@ -1,8 +1,9 @@
 
 <div class="nav-buttons">
     <mat-toolbar>
-      <button mat-button (click)="goToListasCrear()" >Listas Crear</button>
+      <button mat-button routerLink="/listas/crear" [ngClass]="{'active-route': isListasCrearActive()}">Listas Crear</button>
       <span class="spacer"></span>
-      <button mat-button (click)="goToListasBeneficios()" >Listas Beneficios</button>
+      <button mat-button routerLink="/listas-beneficios" [ngClass]="{'active-route': isListasBeneficiosActive()}">Listas Beneficios</button>
     </mat-toolbar>
   </div>
+  

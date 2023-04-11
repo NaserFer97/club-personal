@@ -115,6 +115,13 @@ guardar() {
     this.router.navigate(['/listas-beneficios']);
   }
   goToListasCrear() {
-    this.router.navigate(['/listas-crear']);
+    this.router.navigate(['/listas/crear']);
+  }
+  isListasCrearActive(): boolean {
+    return this.router.isActive('/listas/crear', false);
+  }
+
+  isListasBeneficiosActive(): boolean {
+    return this.router.isActive('/listas-beneficios', false);
   }
 }

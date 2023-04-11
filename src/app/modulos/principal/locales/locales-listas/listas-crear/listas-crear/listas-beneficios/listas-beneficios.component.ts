@@ -22,4 +22,12 @@ export class ListasBeneficiosComponent implements OnInit {
     this.router.navigateByUrl('/listas-beneficio');
   }
 
+    isListasCrearActive(): boolean {
+    return this.router.isActive('/listas/crear', false);
+  }
+
+  isListasBeneficiosActive(): boolean {
+    return this.router.isActive('/listas-beneficios', false);
+  }
+
 }
