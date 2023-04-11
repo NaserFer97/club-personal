@@ -7,6 +7,8 @@
 @import "bootstrap/scss/mixins/_forms.scss";
 @import "~animate.css/animate.min";
 @import './assets/fonts/simple-line-icons/css/simple-line-icons.css';
+@import './assets/scss/buttons.scss';
+@import './assets/scss/tabs.scss';
 
 // Plus imports for other components in your app.
 
@@ -1131,6 +1133,8 @@ Custom media queries
 html i[class^="icon-"] {
   font-family: 'simple-line-icons' !important;
 }
+
+
 
 
 

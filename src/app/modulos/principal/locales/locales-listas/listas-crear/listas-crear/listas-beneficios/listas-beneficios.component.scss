@@ -1,40 +1,9 @@
-*{
-  font-size: 16px;
-}
+
 .nav-buttons {
     margin-bottom: 1rem;
   }
   
-  mat-toolbar {
-    background-color: transparent;
-    padding: 0;
-  }
+  
 
   
-  ::ng-deep .mat-tab-label.mat-tab-label-active {
-    background-color: #f0f0f0; /* Color de fondo minimalista */
-    color: #333; /* Color del texto de la pestaña activa */
-  }
-  ::ng-deep .mat-tab-label {
-    color: #999; /* Color del texto de las pestañas inactivas */
-  }
-  ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
-    background-color: #333;
-    height: 3px;
-  }
-  ::ng-deep .mat-tab-labels {
-    gap: 8px;
-  }
-  ::ng-deep .mat-tab-label:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s ease-in-out;
-  }
-  ::ng-deep .mat-tab-label {
-    font-family: 'Roboto', sans-serif; /* Reemplaza 'Roboto' por la fuente que prefieras */
-    font-size: 16px;
-    font-weight: 500;
-  }
-  ::ng-deep .mat-tab-label .mat-ripple-element {
-    background-color: rgba(0, 0, 0, 0.15);
-  }
   
