@@ -14,7 +14,7 @@ import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.co
 })
 export class LocalesListasComponent implements OnInit {
 
-  displayedColumns: string[] = ['nombre', 'descripcion','acciones']; dataSource: MatTableDataSource<any>;
+  displayedColumns: string[] = ['nombre', 'descripcion', 'acciones']; dataSource: MatTableDataSource<any>;
   data: any = [
     {
       "nombre": "Deportes & Fitness",

@@ -21,5 +21,5 @@ export class TabsComponent implements OnInit {
     }
   }
 
-  
+
 }

@@ -1,7 +1,7 @@
 <h2>Listas</h2>
 
 <div style="display: flex; justify-content: end;">
-  <button (click)="crear()" mat-raised-button class="ml-auto btn btn-primary">Agregar </button>
+  <button (click)="crear()" class="btn btn-primary">Agregar </button>
 </div>
 
 <mat-form-field>
@@ -17,14 +17,14 @@
       <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
     </ng-container>
 
- 
+
 
     <ng-container matColumnDef="descripcion">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion </th>
       <td mat-cell *matCellDef="let row"> {{row.descripcion}} </td>
     </ng-container>
 
-  
+
 
     <ng-container matColumnDef="acciones">
       <th mat-header-cell *matHeaderCellDef></th>

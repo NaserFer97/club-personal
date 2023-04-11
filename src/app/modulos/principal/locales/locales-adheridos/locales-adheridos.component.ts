@@ -19,73 +19,73 @@ import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.co
 })
 export class LocalesAdheridosComponent implements OnInit {
 
-  displayedColumns: string[] = ['nombre', 'rubro', 'tipo', 'acciones'];  dataSource: MatTableDataSource<any>;
+  displayedColumns: string[] = ['nombre', 'rubro', 'tipo', 'acciones']; dataSource: MatTableDataSource<any>;
   data: any = [{
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
     "web": "http://www.shoes4less.com.py"
-  },{
+  }, {
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
@@ -95,11 +95,11 @@ export class LocalesAdheridosComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
-  
+
 
   ngOnInit() {
 
- 
+
 
   }
 
@@ -107,8 +107,8 @@ export class LocalesAdheridosComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.data,);
     ;
   }
-  
- 
+
+
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator!;
@@ -129,7 +129,7 @@ export class LocalesAdheridosComponent implements OnInit {
   editar(row: any) {
     this.router.navigate(['/locales/crear'], { state: { local: row } });
   }
- 
+
 
   borrar(row: any) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
@@ -138,7 +138,7 @@ export class LocalesAdheridosComponent implements OnInit {
         message: '¿Está seguro de que desea eliminar este local?'
       }
     });
-  
+
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         // Aquí coloque el código para eliminar el local
@@ -147,7 +147,7 @@ export class LocalesAdheridosComponent implements OnInit {
       }
     });
   }
-  
+
   borrarElemento(row: any) {
     const index = this.data.findIndex((local: any) => local === row);
     if (index > -1) {
@@ -155,11 +155,11 @@ export class LocalesAdheridosComponent implements OnInit {
       this.updateDataSource();
     }
   }
-  
+
   updateDataSource() {
     this.dataSource.data = this.data;
   }
- 
-  
-  
+
+
+
 }
