@@ -1127,3 +1127,7 @@ Custom media queries
 .cdk-overlay-pane {
   z-index: 1050 !important;
 }
+
+html i[class^="icon-"] {
+  font-family: 'simple-line-icons' !important;
+}
