@@ -19,7 +19,11 @@ import { ListasCrearComponent } from './locales/locales-listas/listas-crear/list
 import { ListasBeneficiosComponent } from './locales/locales-listas/listas-crear/listas-crear/listas-beneficios/listas-beneficios.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { FormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -38,6 +42,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     ListasBeneficiosComponent,
     
     
+    
+    
   
   ],
   imports: [
@@ -51,7 +57,12 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCheckboxModule,
     NgxSpinnerModule,
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatInputModule,
+    MatTableModule,
+    FormsModule,
+    MatListModule,
+    MatButtonModule
   ]
 })
 export class PrincipalModule { }

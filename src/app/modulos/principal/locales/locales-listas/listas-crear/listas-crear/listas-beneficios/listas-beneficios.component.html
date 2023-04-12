@@ -1,14 +1,9 @@
+<h2>Beneficios</h2>
 
 <div class="nav-buttons">
   <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="selectedTabIndex">
     <mat-tab label="Listas ">
       <ng-template matTabContent>
-        <!-- Contenido del componente Listas Crear -->
-
-
-
-
-        
       </ng-template>
     </mat-tab>
     <mat-tab label=" Beneficios">
@@ -19,4 +14,49 @@
   </mat-tab-group>
 </div>
 
+
+
+<div class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Filtrar marcas</mat-label>
+    <input matInput [(ngModel)]="filterValue" (input)="applyFilter()" placeholder="Escribe para filtrar">
+  </mat-form-field>
+</div>
+
+<div fxLayout="row" fxLayoutGap="16px" style="width: 40%;">
+  <div fxFlex="300px" style="border: 1px solid #ccc; overflow-y: scroll; max-height: 300px;">
+    <mat-selection-list #marcasList>
+      <mat-list-option *ngFor="let row of dataSource" [value]="row">
+        {{row.lista}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="mb-3"></div>
+
   
+
+  <div fxLayout="column" fxLayoutAlign="center">
+    <button class="btn btn-primary" (click)="addSelectedOptions()" style="margin-bottom: 16px; background: rgba(0, 0, 255, 0.746); border-color:rgba(0, 0, 255, 0.746) ;">
+      Agregar a beneficiados
+    </button>
+    <button class="btn btn-primary " style="background-color: red; border: red; margin-left: 2em;" (click)="removeSelectedOptions()">
+      Quitar de beneficiado
+    </button>
+  </div>
+
+  <h2>Beneficiados</h2>
+  <div fxFlex="300px" style="border: 1px solid #ccc; overflow-y: scroll; max-height: 300px;">
+    <mat-selection-list #beneficiosList>
+      <mat-list-option *ngFor="let row of beneficiosDataSource" [value]="row">
+        {{row.marca}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+</div>
+
+<div style="margin-top: 1em;" class="button-container">
+  <button class="btn btn-primary" (click)="guardar()">
+    Guardar
+  </button>
+  <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">Volver</button>
+</div>

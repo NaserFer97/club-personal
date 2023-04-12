@@ -1,3 +1,4 @@
+<h2> Agregar lista </h2>
 <div class="nav-buttons">
   <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="selectedTabIndex">
     <mat-tab label="Listas ">
@@ -16,7 +17,7 @@
 
 <div [formGroup]="form" (ngSubmit)="guardar()">
 
-  <h2> Agregar lista </h2>
+  
 
   <mat-form-field style="width: 30em;" appearance="fill">
     <mat-label class="inputText">Nombre</mat-label>
