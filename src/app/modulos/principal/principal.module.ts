@@ -19,7 +19,6 @@ import { ListasCrearComponent } from './locales/locales-listas/listas-crear/list
 import { ListasBeneficiosComponent } from './locales/locales-listas/listas-crear/listas-crear/listas-beneficios/listas-beneficios.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
-import { TabsComponent } from './locales/locales-listas/listas-crear/tabs/tabs.component';
 
 
 
@@ -37,7 +36,7 @@ import { TabsComponent } from './locales/locales-listas/listas-crear/tabs/tabs.c
     LocalesListasComponent,
     ListasCrearComponent,
     ListasBeneficiosComponent,
-    TabsComponent,
+    
     
   
   ],

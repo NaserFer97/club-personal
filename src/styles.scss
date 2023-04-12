@@ -75,7 +75,7 @@ body {
 body {
   font-weight: 300;
   color: black;
-  font-size: 14px;
+  
 }
 
 pre[class*="language-"] {
@@ -90,13 +90,6 @@ pre[class*="language-"] {
 }
 .text-left {
   text-align: left !important;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
   margin: 2.5rem 0 1rem;
   font-family: inherit;
   font-weight: 600;
@@ -112,9 +105,7 @@ p {
   line-height: 1.5;
   margin: 0 0 1rem;
 }
-.btn {
-  border-radius: 8px !important;
-}
+
 .table__documentation {
   border-collapse: collapse;
   width: 100%;
@@ -146,10 +137,7 @@ html,
 body {
   height: 100%;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+
 
 .main-wrapper {
   display: grid;
@@ -856,21 +844,11 @@ table {
   }
 }
 
-.btn {
-  padding: 7px 30px;
-  border: none;
-  cursor: pointer;
-}
 
-.btn.btn-primary {
-  color: white;
-  background-color: #b80000;
-}
 
-.btn.btn-primary:hover {
-  color: white;
-  background-color: #cc0c0c;
-}
+
+
+
 
 .enlace-icono {
   display: flex;

@@ -3,18 +3,20 @@
 }
 
 .btn {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   padding: 12px 22px;
   letter-spacing: 2.2px;
-  border-radius: 0px;
+  border-radius: 8px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   word-wrap: break-word;
-  white-space: normal !important;
- 
-  box-shadow: none !important;
+  white-space: normal ;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  
 }
 
 .btn:active {
@@ -22,8 +24,10 @@
 }
 
 .btn-primary {
-  background-color: #26b462 !important;
+  background-color: #26b462;
   border: 1px solid #26b462;
+  
+
   
 }
 

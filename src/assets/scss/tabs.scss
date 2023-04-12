@@ -1,10 +1,10 @@
 
 ::ng-deep .mat-tab-label.mat-tab-label-active {
-    background-color: #f0f0f0; /* Color de fondo minimalista */
-    color: #333; /* Color del texto de la pestaña activa */
+    background-color: #f0f0f0; 
+    color: #333; 
   }
   ::ng-deep .mat-tab-label {
-    color: #999; /* Color del texto de las pestañas inactivas */
+    color: #999;
   }
   ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
     background-color: #333;
@@ -28,3 +28,4 @@
     background-color: transparent;
     padding: 0;
   }
+  
