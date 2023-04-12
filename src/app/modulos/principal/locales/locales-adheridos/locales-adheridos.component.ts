@@ -18,6 +18,7 @@ export class LocalesAdheridosComponent implements OnInit {
 
   displayedColumns: string[] = ['nombre', 'rubro', 'tipo', 'acciones']; dataSource: MatTableDataSource<any>;
   data: any = [{
+    "id":1,
     "nombre": "Shoes 4 Less",
     "rubro": "Calzado",
     "tipo": "COMERCIO",
@@ -95,38 +96,35 @@ export class LocalesAdheridosComponent implements OnInit {
 
 
   ngOnInit() {
-
-
-
+    this.listar();
   }
 
-  constructor(private router: Router, private dialog: MatDialog, private LocalesAdheridosService: LocalesAdheridosService) {
+  constructor(private router: Router, private dialog: MatDialog, private localesAdheridosService: LocalesAdheridosService) {
     this.dataSource = new MatTableDataSource(this.data,);
     ;
   }
 
-
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator!;
-    this.dataSource.sort = this.sort!;
+  listar(){
+    this.localesAdheridosService.listar().subscribe(
+      data => {
+        if (data) {
+          // {
+          //  mensaje:"Locales listados correctamente",
+          //  data: [],
+          //  exito:true
+          // }
+          if(data){
+            if(data.codigo==200){
+              this.data = [...data.data];
+            }
+          }
+        }
+      },
+      err => {
+        var data = err.error;
+      }
+    );
   }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
-  crear() {
-    this.router.navigate(['/locales/crear']);
-  }
-
-  editar(row: any) {
-    this.router.navigate(['/locales/crear'], { state: { local: row } });
-  }
-
 
   borrar(row: any) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
@@ -145,6 +143,26 @@ export class LocalesAdheridosComponent implements OnInit {
     });
   }
 
+  crear() {
+    this.router.navigate(['/locales/crear']);
+  }
+
+  editar(row: any) {
+    this.router.navigate(['/locales/crear'], { state: { local: row } });
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator!;
+    this.dataSource.sort = this.sort!;
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
   borrarElemento(row: any) {
     const index = this.data.findIndex((local: any) => local === row);
     if (index > -1) {
@@ -156,7 +174,4 @@ export class LocalesAdheridosComponent implements OnInit {
   updateDataSource() {
     this.dataSource.data = this.data;
   }
-
-
-
 }

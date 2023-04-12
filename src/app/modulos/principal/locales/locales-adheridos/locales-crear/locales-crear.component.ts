@@ -24,57 +24,61 @@ export class LocalesCrearComponent implements OnInit {
 
   localId: number | null = null;
 
-  constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private LocalesAdheridosService: LocalesAdheridosService, private route: ActivatedRoute) {
-  this.form = this.fb.group({});
-}
+  constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private localesAdheridosService: LocalesAdheridosService, private route: ActivatedRoute) {
+    this.form = this.fb.group({});
+  }
 
-ngOnInit(): void {
-  this.form = this.fb.group({
-    nombre: ['', Validators.required],
-    rubro: ['', Validators.required],
-    sitioWeb: [''],
-    fecha: [new Date(), Validators.required],
-    destacado: [false],
-    mostrarEnApp: [false],
-    email: ['', [Validators.required, Validators.email]],
-    tipoLocal: ['', Validators.required],
-  });
-
-  const local = history.state.local;
-  if (local) {
-    this.localId = local.id;
-    this.form.patchValue({
-      nombre: local.nombre,
-      rubro: local.rubro,
-      sitioWeb: local.web,
-      fecha: local.fecha,
-      destacado: local.destacado,
-      mostrarEnApp: local.mostrarEnApp,
-      email: local.email,
-      tipoLocal: local.tipo,
+  ngOnInit(): void {
+    this.form = this.fb.group({
+      nombre: ['', Validators.required],
+      rubro: ['', Validators.required],
+      sitioWeb: [''],
+      fecha: [new Date(), Validators.required],
+      destacado: [false],
+      mostrarEnApp: [false],
+      email: ['', [Validators.required, Validators.email]],
+      tipoLocal: ['', Validators.required],
     });
+
+    const local = history.state.local;
+    if (local) {
+      this.localId = local.id;
+      this.form.patchValue({
+        nombre: local.nombre,
+        rubro: local.rubro,
+        sitioWeb: local.web,
+        fecha: local.fecha,
+        destacado: local.destacado,
+        mostrarEnApp: local.mostrarEnApp,
+        email: local.email,
+        tipoLocal: local.tipo,
+      });
+    }
   }
-}
 
-
-
-guardar() {
-  if (!this.form.valid) {
-    this.formInvalid = true;
-    this.form.markAllAsTouched();
-    return;
+  guardar() {
+    if (!this.form.valid) {
+      this.formInvalid = true;
+      this.form.markAllAsTouched();
+      return;
+    }
+    const formValues = this.form.getRawValue();
+    this.spinner.show();
+    //Llamar al servicio crear
+    this.localesAdheridosService.crear(formValues).subscribe(
+      data => {
+        this.spinner.hide();
+        if (data) {
+          this.router.navigateByUrl('locales-adheridos')
+        }
+      },
+      err => {
+        this.spinner.hide();
+        var data = err.error;
+        //mostrar mensaje al usuario
+      }
+    );
   }
-  const formValues = this.form.getRawValue();
-  this.spinner.show();
-  this.router.navigateByUrl('locales-adheridos')
-  this.spinner.hide();
-  
-    
-  
-}
-
-
-
 
 
   volver() {

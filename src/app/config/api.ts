@@ -1,6 +1,5 @@
 
-const url = '';
-
+const url = '/club-personal/api/';
 
 const Servers = {
   CLUB: {
