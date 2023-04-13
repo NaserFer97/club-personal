@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { LocalService } from 'src/app/services/locales-crear/local.service';
+import { LocalService } from 'src/app/services/locales/locales-adheridos/locales-crear/locales-crear.service';
 import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
 
 @Component({
@@ -78,7 +78,7 @@ export class LocalesListasComponent implements OnInit {
 
   }
 
-  constructor(private router: Router, private dialog: MatDialog, private localService: LocalService) {
+  constructor(private router: Router, private dialog: MatDialog) {
     this.dataSource = new MatTableDataSource(this.data,);
     ;
   }

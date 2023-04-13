@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { getErrorMessage } from 'src/app/config/constants';
-import { LocalService } from 'src/app/services/locales-crear/local.service'; 
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MatTabChangeEvent } from '@angular/material/tabs';
+import { LocalService } from 'src/app/services/locales/locales-adheridos/locales-crear/locales-crear.service';
 
 
 

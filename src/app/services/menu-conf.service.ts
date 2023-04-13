@@ -42,6 +42,11 @@ export class MenuConfService {
             id: 'Listas',
             label: translate('Listas'),
             route: '/locales-listas'
+          },
+          {
+            id: 'Trazabilidad Beneficios',
+            label: translate('Beneficios'),
+            route: '/locales-beneficios'
           }
           
         ],

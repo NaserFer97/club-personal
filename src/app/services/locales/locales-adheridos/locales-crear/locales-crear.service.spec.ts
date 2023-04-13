@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LocalService } from './local.service';
+import { LocalService } from './locales-crear.service';
 
 describe('LocalService', () => {
   let service: LocalService;

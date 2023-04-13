@@ -9,7 +9,7 @@ import { RubrosCrearComponent } from './locales/locales-rubros/rubros-crear/rubr
 import { LocalesListasComponent } from './locales/locales-listas/locales-listas.component';
 import { ListasCrearComponent } from './locales/locales-listas/listas-crear/listas-crear/listas-crear.component';
 import { ListasBeneficiosComponent } from './locales/locales-listas/listas-crear/listas-crear/listas-beneficios/listas-beneficios.component';
-
+import { LocalesBeneficiosComponent } from './locales/locales-beneficios/locales-beneficios/locales-beneficios.component';
 const routes: Routes = [
   {
     path: '',
@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'locales-listas', component: LocalesListasComponent },
       { path: 'listas/crear', component: ListasCrearComponent },
       { path: 'listas-beneficios', component: ListasBeneficiosComponent },
+      { path: 'locales-beneficios', component: LocalesBeneficiosComponent }
       
 
     ]

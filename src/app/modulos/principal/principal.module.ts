@@ -24,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { LocalesBeneficiosComponent } from './locales/locales-beneficios/locales-beneficios/locales-beneficios.component';
 
 
 
@@ -40,6 +41,7 @@ import { MatButtonModule } from '@angular/material/button';
     LocalesListasComponent,
     ListasCrearComponent,
     ListasBeneficiosComponent,
+    LocalesBeneficiosComponent,
     
     
     

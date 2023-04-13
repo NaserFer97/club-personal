@@ -3,10 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { getErrorMessage } from 'src/app/config/constants';
-import { LocalService } from 'src/app/services/locales-crear/local.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import { RubrosCrearService } from 'src/app/services/locales/rubros/rubros-crear/rubros-crear.service';
 @Component({
   selector: 'app-rubros-crear',
   templateUrl: './rubros-crear.component.html',
@@ -24,7 +23,7 @@ export class RubrosCrearComponent implements OnInit {
 
   localId: number | null = null;
 
-  constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private localService: LocalService, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private RubrosCrearService: RubrosCrearService, private route: ActivatedRoute) {
     this.form = this.fb.group({});
   }
 
@@ -68,16 +67,9 @@ export class RubrosCrearComponent implements OnInit {
     const formValues = this.form.getRawValue();
     this.spinner.show();
 
-    // Crear una referencia para el observable de la solicitud
     let request$: Observable<any>;
 
-    if (this.localId) {
-      // Si hay un localId, actualiza el local existente
-      request$ = this.localService.actualizarLocal(this.localId.toString(), formValues);
-    } else {
-      // Si no hay localId, crea un nuevo local
-      request$ = this.localService.crearLocal(formValues);
-    }
+  
 
     // Añadir un retraso artificial de 500 ms para simular una carga
     setTimeout(() => {
@@ -87,7 +79,6 @@ export class RubrosCrearComponent implements OnInit {
           if (this.localId) {
             // Si hay un localId, actualiza el local en la vista
             const updatedLocal = { ...formValues, id: this.localId };
-            this.localService.updateLocalInView(updatedLocal);
           }
           // Navegar de regreso a la lista de locales adheridos
           this.router.navigateByUrl('locales-adheridos');
