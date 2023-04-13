@@ -56,8 +56,24 @@ export class MenuConfService {
         label: this.translationService.translate('CINES'),
         iconClasses: 'icon icon-cines',
         children: [
+          {
+            id: 'salas de cine',
+            label: translate('Salas de cine'),
+            route: '/salas-de-cine'
+          },
+          {
+            id: 'peliculas',
+            label: translate('Peliculas'),
+            route: '/peliculas'
+          },
+          {
+            id: 'importar-peliculas',
+            label: translate('Importar cartelera'),
+            route: '/importar-cartelera'
+          },
 
         ],
+        
       },
 
       {

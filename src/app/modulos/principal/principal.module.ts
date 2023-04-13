@@ -25,6 +25,11 @@ import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { LocalesBeneficiosComponent } from './locales/locales-beneficios/locales-beneficios/locales-beneficios.component';
+import { SalasDeCineComponent } from './cines/salas-de-cine/salas-de-cine.component';
+import { PeliculasComponent } from './cines/peliculas/peliculas.component';
+import { ImportarCarteleraComponent } from './cines/importar-cartelera/importar-cartelera.component';
+import { SalasDeCineCrearComponent } from './cines/salas-de-cine/salas-de-cine-crear/salas-de-cine-crear/salas-de-cine-crear.component';
+import { PeliculasCrearComponent } from './cines/peliculas/peliculas-crear/peliculas-crear.component';
 
 
 
@@ -42,6 +47,12 @@ import { LocalesBeneficiosComponent } from './locales/locales-beneficios/locales
     ListasCrearComponent,
     ListasBeneficiosComponent,
     LocalesBeneficiosComponent,
+    SalasDeCineComponent,
+    PeliculasComponent,
+    ImportarCarteleraComponent,
+    SalasDeCineCrearComponent,
+    PeliculasCrearComponent,
+    
     
     
     
