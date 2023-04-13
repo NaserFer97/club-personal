@@ -4,14 +4,14 @@
 
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Descripcion del local</mat-label>
-        <input matInput #input formControlName="nombre">
-        <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
+        <input matInput #input formControlName="descripcion">
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('descripcion',form)}}</mat-error>
     </mat-form-field>
     <div class="mb-3"></div>
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Codigo</mat-label>
-        <mat-error *ngIf="form.invalid">{{getErrorMessage('rubro',form)}}</mat-error>
-        <mat-select formControlName="rubro">
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('codigo',form)}}</mat-error>
+        <mat-select formControlName="codigo">
             <mat-option value="entretenimiento">Entretenimiento</mat-option>
             <mat-option value="hogar">Hogar</mat-option>
             <mat-option value="gastronomia">Gastronomia</mat-option>
@@ -24,7 +24,7 @@
 
 
     <div style="margin-top: 3em;" class="button-container">
-        <button class="btn btn-primary" (click)="guardar()">
+        <button type="submit" class="btn btn-primary" (click)="guardar()">
             Guardar
         </button>
         <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">Volver</button>

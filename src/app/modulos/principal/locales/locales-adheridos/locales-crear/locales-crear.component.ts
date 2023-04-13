@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { getErrorMessage } from 'src/app/config/constants';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { LocalesAdheridosService } from 'src/app/services/locales/locales-adheridos/locales-adheridos.service';
 
 @Component({
@@ -62,23 +61,28 @@ export class LocalesCrearComponent implements OnInit {
       this.form.markAllAsTouched();
       return;
     }
+  
     const formValues = this.form.getRawValue();
     this.spinner.show();
-    //Llamar al servicio crear
-    this.localesAdheridosService.crear(formValues).subscribe(
-      data => {
-        this.spinner.hide();
-        if (data) {
-          this.router.navigateByUrl('locales-adheridos')
+  
+    // Llamar al servicio crear con un retraso artificial de 2 segundos
+    setTimeout(() => {
+      this.localesAdheridosService.crear(formValues).subscribe(
+        data => {
+          this.spinner.hide();
+          if (data) {
+            this.router.navigateByUrl('locales-adheridos');
+          }
+        },
+        err => {
+          this.spinner.hide();
+          var data = err.error;
+          //mostrar mensaje al usuario
         }
-      },
-      err => {
-        this.spinner.hide();
-        var data = err.error;
-        //mostrar mensaje al usuario
-      }
-    );
+      );
+    }, 500);
   }
+  
 
 
   volver() {

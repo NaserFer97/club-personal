@@ -5,7 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { getErrorMessage } from 'src/app/config/constants';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { RubrosCrearService } from 'src/app/services/locales/rubros/rubros-crear/rubros-crear.service';
+import { RubrosService } from 'src/app/services/locales/rubros/rubros.service';
 @Component({
   selector: 'app-rubros-crear',
   templateUrl: './rubros-crear.component.html',
@@ -23,34 +23,23 @@ export class RubrosCrearComponent implements OnInit {
 
   localId: number | null = null;
 
-  constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private RubrosCrearService: RubrosCrearService, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private RubrosService: RubrosService, private route: ActivatedRoute) {
     this.form = this.fb.group({});
   }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      nombre: ['', Validators.required],
-      rubro: ['', Validators.required],
-      sitioWeb: [''],
-      fecha: [new Date(), Validators.required],
-      destacado: [false],
-      mostrarEnApp: [false],
-      email: ['', [Validators.required, Validators.email]],
-      tipoLocal: ['', Validators.required],
+      descripcion: ['', Validators.required],
+      codigo: ['', Validators.required],
+    
     });
 
     const local = history.state.local;
     if (local) {
       this.localId = local.id;
       this.form.patchValue({
-        nombre: local.nombre,
-        rubro: local.rubro,
-        sitioWeb: local.web,
-        fecha: local.fecha,
-        destacado: local.destacado,
-        mostrarEnApp: local.mostrarEnApp,
-        email: local.email,
-        tipoLocal: local.tipo,
+        descripcion: local.descripcion,
+        codigo: local.codigo,
       });
     }
   }
@@ -63,33 +52,28 @@ export class RubrosCrearComponent implements OnInit {
       this.form.markAllAsTouched();
       return;
     }
-
+  
     const formValues = this.form.getRawValue();
     this.spinner.show();
-
-    let request$: Observable<any>;
-
   
-
-    // Añadir un retraso artificial de 500 ms para simular una carga
+    // Llamar al servicio crear con un retraso artificial de 2 segundos
     setTimeout(() => {
-      request$.subscribe(
-        (response) => {
+      this.RubrosService.crear(formValues).subscribe(
+        data => {
           this.spinner.hide();
-          if (this.localId) {
-            // Si hay un localId, actualiza el local en la vista
-            const updatedLocal = { ...formValues, id: this.localId };
+          if (data) {
+            this.router.navigateByUrl('locales-rubros');
           }
-          // Navegar de regreso a la lista de locales adheridos
-          this.router.navigateByUrl('locales-adheridos');
         },
-        () => {
+        err => {
           this.spinner.hide();
+          var data = err.error;
+          //mostrar mensaje al usuario
         }
       );
     }, 500);
   }
-
+  
 
 
 

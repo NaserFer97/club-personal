@@ -4,9 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { LocalService } from 'src/app/services/locales/locales-adheridos/locales-crear/locales-crear.service';
 import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
-
+import { ListasService } from 'src/app/services/locales/listas/listas.service';
 @Component({
   selector: 'app-locales-listas',
   templateUrl: './locales-listas.component.html',
@@ -78,8 +77,8 @@ export class LocalesListasComponent implements OnInit {
 
   }
 
-  constructor(private router: Router, private dialog: MatDialog) {
-    this.dataSource = new MatTableDataSource(this.data,);
+  constructor(private router: Router, private dialog: MatDialog,private ListasService: ListasService) {
+    this.dataSource = new MatTableDataSource(this.data, );
     ;
   }
 
@@ -104,7 +103,6 @@ export class LocalesListasComponent implements OnInit {
   editar(row: any) {
     this.router.navigate(['listas/crear'], { state: { local: row } });
   }
-
 
   borrar(row: any) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {

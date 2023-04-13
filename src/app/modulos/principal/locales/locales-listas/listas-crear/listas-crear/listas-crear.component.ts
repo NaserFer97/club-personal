@@ -6,8 +6,7 @@ import { getErrorMessage } from 'src/app/config/constants';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MatTabChangeEvent } from '@angular/material/tabs';
-import { LocalService } from 'src/app/services/locales/locales-adheridos/locales-crear/locales-crear.service';
-
+import { ListasService } from 'src/app/services/locales/listas/listas.service';
 
 
 @Component({
@@ -20,7 +19,6 @@ export class ListasCrearComponent implements OnInit {
   form: FormGroup;
   formInvalid = false;
   getErrorMessage: any = getErrorMessage;
-  selectedTabIndex: number;
 
 
 
@@ -30,21 +28,15 @@ export class ListasCrearComponent implements OnInit {
 
   localId: number | null = null;
 
-  constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private localService: LocalService, private route: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private ListasService: ListasService, private route: ActivatedRoute) {
   this.form = this.fb.group({});
-  this.selectedTabIndex = this.isListasCrearActive() ? 0 : 1
 }
 
 ngOnInit(): void {
   this.form = this.fb.group({
     nombre: ['', Validators.required],
-    rubro: ['', Validators.required],
-    sitioWeb: [''],
-    fecha: [new Date(), Validators.required],
-    destacado: [false],
-    mostrarEnApp: [false],
-    email: ['', [Validators.required, Validators.email]],
-    tipoLocal: ['', Validators.required],
+    descripcion: ['', Validators.required],
+ 
    
   });
 
@@ -53,13 +45,8 @@ ngOnInit(): void {
     this.localId = local.id;
     this.form.patchValue({
       nombre: local.nombre,
-      rubro: local.rubro,
-      sitioWeb: local.web,
-      fecha: local.fecha,
-      destacado: local.destacado,
-      mostrarEnApp: local.mostrarEnApp,
-      email: local.email,
-      tipoLocal: local.tipo,
+      descripcion: local.descripcion,
+     
     });
   }
 }
@@ -76,32 +63,19 @@ guardar() {
   const formValues = this.form.getRawValue();
   this.spinner.show();
 
-  // Crear una referencia para el observable de la solicitud
-  let request$: Observable<any>;
-
-  if (this.localId) {
-    // Si hay un localId, actualiza el local existente
-    request$ = this.localService.actualizarLocal(this.localId.toString(), formValues);
-  } else {
-    // Si no hay localId, crea un nuevo local
-    request$ = this.localService.crearLocal(formValues);
-  }
-
-  // Añadir un retraso artificial de 500 ms para simular una carga
+  // Llamar al servicio crear con un retraso artificial de 2 segundos
   setTimeout(() => {
-    request$.subscribe(
-      (response) => {
+    this.ListasService.crear(formValues).subscribe(
+      data => {
         this.spinner.hide();
-        if (this.localId) {
-          // Si hay un localId, actualiza el local en la vista
-          const updatedLocal = { ...formValues, id: this.localId };
-          this.localService.updateLocalInView(updatedLocal);
+        if (data) {
+          this.router.navigateByUrl('locales-listas');
         }
-        // Navegar de regreso a la lista de locales adheridos
-        this.router.navigateByUrl('locales-adheridos');
       },
-      () => {
+      err => {
         this.spinner.hide();
+        var data = err.error;
+        //mostrar mensaje al usuario
       }
     );
   }, 500);
@@ -109,32 +83,7 @@ guardar() {
 
 
 
-
-  volver() {
-    this.router.navigateByUrl('locales-listas');
-  }
- 
-  goToListasBeneficios() {
-    this.router.navigate(['/listas-beneficios']);
-  }
-  goToListasCrear() {
-    this.router.navigate(['/listas/crear']);
-  }
-  isListasCrearActive(): boolean {
-    return this.router.isActive('/listas/crear', false);
-  }
-
-  isListasBeneficiosActive(): boolean {
-    return this.router.isActive('/listas-beneficios', false);
-  }
-  onTabChange(event: MatTabChangeEvent) {
-    switch (event.index) {
-      case 0:
-        this.goToListasCrear();
-        break;
-      case 1:
-        this.goToListasBeneficios();
-        break;
-    }
-  }
+volver() {
+  this.router.navigateByUrl('locales-listas');
+}
 }
