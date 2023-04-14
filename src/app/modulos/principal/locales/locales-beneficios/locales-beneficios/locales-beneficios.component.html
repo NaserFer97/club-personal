@@ -1,40 +1,81 @@
-<h2>Beneficios</h2>
 
-<div class="search-container">
-  <mat-form-field appearance="outline">
-    <mat-label>Filtrar marcas</mat-label>
-    <input matInput [(ngModel)]="filterValue" (input)="applyFilter()" placeholder="Escribe para filtrar">
+
+
+<h3>Criterios de busqueda</h3>
+<div class="filter-container">
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Desde</mat-label>
+    <input matInput placeholder="Desde">
   </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Hasta</mat-label>
+    <input matInput placeholder="Hasta">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Canal</mat-label>
+    <input matInput placeholder="Canal">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Linea</mat-label>
+    <input matInput placeholder="Linea">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Local</mat-label>
+    <input matInput placeholder="Local">
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="search-button">
+    Buscar
+  </button>
 </div>
 
-<div class="main-container" style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between;">
-  <div class="left-container" style="flex: 1; border: 1px solid #ccc; overflow-y: scroll; max-height: 300px; margin-right: 16px;">
-    <mat-selection-list #marcasList>
-      <mat-list-option *ngFor="let row of dataSource" [value]="row">
-        {{row.lista}}
-      </mat-list-option>
-    </mat-selection-list>
-  </div>
+<div class="mat-elevation-z2">
+  <table mat-table [dataSource]="data" matSort>
 
-  <div class="middle-container" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; margin-right: 16px;">
-    <button class="btn btn-primary" (click)="addSelectedOptions()" style="margin-bottom: 16px; background: rgba(0, 0, 255, 0.746); border-color:rgba(0, 0, 255, 0.746) ;">
-      Agregar 
-    </button>
-    <button class="btn btn-primary " style="background-color: red; border: red;" (click)="removeSelectedOptions()">
-      Quitar 
-    </button>
-  </div>
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+      <td mat-cell *matCellDef="let row"> {{row.fecha}} </td>
+    </ng-container>
 
-  <div class="right-container" style="flex: 1;">
-    <h2>Beneficios seleccionados</h2>
-    <div style="border: 1px solid #ccc; overflow-y: scroll; max-height: 300px;">
-      <mat-selection-list #beneficiosList>
-        <mat-list-option *ngFor="let row of beneficiosDataSource" [value]="row">
-          {{row.marca}}
-        </mat-list-option>
-      </mat-selection-list>
-    </div>
-  </div>
+    <ng-container matColumnDef="idCanje">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID Canje </th>
+      <td mat-cell *matCellDef="let row"> {{row.idCanje}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="linea">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Linea </th>
+      <td mat-cell *matCellDef="let row"> {{row.linea}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="comercio">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Comercio</th>
+      <td mat-cell *matCellDef="let row"> {{row.comercio}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="beneficio">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Beneficio</th>
+      <td mat-cell *matCellDef="let row"> {{row.beneficio}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="origen">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Origen</th>
+      <td mat-cell *matCellDef="let row"> {{row.origen}} </td>
+    </ng-container>
+
+  
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+
+    
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 </div>
 
 

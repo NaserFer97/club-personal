@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { ListasService } from 'src/app/services/locales/listas/listas.service';
+import { MatSelectionList } from '@angular/material/list';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class ListasCrearComponent implements OnInit {
   form: FormGroup;
   formInvalid = false;
   getErrorMessage: any = getErrorMessage;
+  data: any[] | undefined;
 
 
 
@@ -28,11 +30,33 @@ export class ListasCrearComponent implements OnInit {
 
   localId: number | null = null;
 
+  filterValue = '';
+  displayedColumns1: string[] = ['lista'];
+  dataSource = [
+    { lista: 'Asuncion Gran Hotel - Descuento' },
+    { lista: 'cine Fuentes - 2x1 ' },
+    { lista: 'Cines Itau del Sol - 2x1' },
+    { lista: 'Five Hotel - Day Use' },
+    { lista: 'INDIO - Descuento' },
+    
+  ];
+
+  beneficiosSeleccionados = [
+    { lista: '' },
+   
+  ];
+
+  @ViewChild('marcasList', { static: false }) lista?: MatSelectionList;
+
+
   constructor(private fb: FormBuilder, private router: Router, private spinner: NgxSpinnerService, private ListasService: ListasService, private route: ActivatedRoute) {
   this.form = this.fb.group({});
 }
 
 ngOnInit(): void {
+  
+  this.dataSource.sort((a, b) => a.lista.localeCompare(b.lista));
+  this.dataSource = this.dataSource.slice(0, 15);
   this.form = this.fb.group({
     nombre: ['', Validators.required],
     descripcion: ['', Validators.required],
@@ -50,8 +74,57 @@ ngOnInit(): void {
     });
   }
 }
-  
 
+listar(){
+  this.ListasService.listar().subscribe(
+    data => {
+      if (data) {
+        // {
+        //  mensaje:"Locales listados correctamente",
+        //  data: [],
+        //  exito:true
+        // }
+        if(data){
+          if(data.codigo==200){
+            this.data = [...data.data];
+          }
+        }
+      }
+    },
+    err => {
+      var data = err.error;
+    }
+  );
+}
+  
+applyFilter() {
+  this.dataSource = this.dataSource.filter(row =>
+    Object.values(row).some(value =>
+      value.toLowerCase().includes(this.filterValue.toLowerCase())
+    )
+  );
+}
+addSelectedOptions() {
+  if (this.lista) {
+    const selectedOptions = this.lista.selectedOptions.selected.map((option: { value: any; }) => option.value);
+    if (selectedOptions) {
+      this.beneficiosSeleccionados.push(...selectedOptions);
+      this.dataSource = this.dataSource.filter(row => !selectedOptions.includes(row));
+    }
+    this.lista.deselectAll();
+  }
+}
+
+removeSelectedOptions() {
+  if (this.lista) {
+    const selectedOptions = this.lista.selectedOptions.selected.map((option: { value: any; }) => option.value);
+    if (selectedOptions) {
+      this.dataSource.push(...selectedOptions);
+      this.beneficiosSeleccionados = this.beneficiosSeleccionados.filter(row => !selectedOptions.includes(row));
+    }
+    this.lista.deselectAll();
+  }
+}
 
 
 guardar() {

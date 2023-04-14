@@ -39,6 +39,20 @@ export class ListasBeneficiosComponent implements OnInit {
     { marca: 'Samsung' },
     { marca: 'Apple' },
   ];
+  displayedColumns2: string[] = ['fecha', 'idCanje', 'linea', 'comercio', 'beneficio', 'origen'];
+  
+
+  data: any = [
+    {
+      "fecha":1,
+      "idCanje": 1,
+      "linea": "Calzado",
+      "comercio": "COMERCIO",
+      "beneficio": "http://www.shoes4less.com.py",
+      "origen": "http://www.shoes4less.com.py",
+    }
+    
+  ];
 
   @ViewChild('marcasList', { static: false }) lista?: MatSelectionList;
   @ViewChild('beneficiosList', { static: false }) beneficiosLista?: MatSelectionList;
