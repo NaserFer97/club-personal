@@ -1,1 +1,46 @@
-<p>locales-beneficios works!</p>
+<h2>Beneficios</h2>
+
+<div class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Filtrar marcas</mat-label>
+    <input matInput [(ngModel)]="filterValue" (input)="applyFilter()" placeholder="Escribe para filtrar">
+  </mat-form-field>
+</div>
+
+<div class="main-container" style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between;">
+  <div class="left-container" style="flex: 1; border: 1px solid #ccc; overflow-y: scroll; max-height: 300px; margin-right: 16px;">
+    <mat-selection-list #marcasList>
+      <mat-list-option *ngFor="let row of dataSource" [value]="row">
+        {{row.lista}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+
+  <div class="middle-container" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; margin-right: 16px;">
+    <button class="btn btn-primary" (click)="addSelectedOptions()" style="margin-bottom: 16px; background: rgba(0, 0, 255, 0.746); border-color:rgba(0, 0, 255, 0.746) ;">
+      Agregar 
+    </button>
+    <button class="btn btn-primary " style="background-color: red; border: red;" (click)="removeSelectedOptions()">
+      Quitar 
+    </button>
+  </div>
+
+  <div class="right-container" style="flex: 1;">
+    <h2>Beneficios seleccionados</h2>
+    <div style="border: 1px solid #ccc; overflow-y: scroll; max-height: 300px;">
+      <mat-selection-list #beneficiosList>
+        <mat-list-option *ngFor="let row of beneficiosDataSource" [value]="row">
+          {{row.marca}}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+  </div>
+</div>
+
+
+
+<div style="margin-top: 1em;" class="button-container">
+  <button class="btn btn-primary" (click)="guardar()">
+    Guardar
+  </button>
+</div>

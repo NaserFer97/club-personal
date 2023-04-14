@@ -82,6 +82,28 @@ export class LocalesListasComponent implements OnInit {
     ;
   }
 
+  listar(){
+    this.ListasService.listar().subscribe(
+      data => {
+        if (data) {
+          // {
+          //  mensaje:"Locales listados correctamente",
+          //  data: [],
+          //  exito:true
+          // }
+          if(data){
+            if(data.codigo==200){
+              this.data = [...data.data];
+            }
+          }
+        }
+      },
+      err => {
+        var data = err.error;
+      }
+    );
+  }
+
 
 
   ngAfterViewInit() {

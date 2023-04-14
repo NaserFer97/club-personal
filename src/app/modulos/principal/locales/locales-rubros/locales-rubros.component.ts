@@ -63,6 +63,28 @@ export class LocalesRubrosComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.data,);
     ;
   }
+
+  listar(){
+    this.RubrosService.listar().subscribe(
+      data => {
+        if (data) {
+          // {
+          //  mensaje:"Locales listados correctamente",
+          //  data: [],
+          //  exito:true
+          // }
+          if(data){
+            if(data.codigo==200){
+              this.data = [...data.data];
+            }
+          }
+        }
+      },
+      err => {
+        var data = err.error;
+      }
+    );
+  }
   
  
 

@@ -12,9 +12,12 @@ import { ListasBeneficiosComponent } from './locales/locales-listas/listas-crear
 import { LocalesBeneficiosComponent } from './locales/locales-beneficios/locales-beneficios/locales-beneficios.component';
 import { SalasDeCineComponent } from './cines/salas-de-cine/salas-de-cine.component';
 import { PeliculasComponent } from './cines/peliculas/peliculas.component';
-import { ImportarCarteleraComponent } from './cines/importar-cartelera/importar-cartelera.component';
 import { SalasDeCineCrearComponent } from './cines/salas-de-cine/salas-de-cine-crear/salas-de-cine-crear/salas-de-cine-crear.component';
 import { PeliculasCrearComponent } from './cines/peliculas/peliculas-crear/peliculas-crear.component';
+import { ImportarCarteleraComponent } from './cines/importar-cartelera/importar-cartelera.component';
+import { EventosComponent } from './eventos/eventos/eventos/eventos.component';
+import { TipoEventoComponent } from './eventos/tipo-evento/tipo-evento/tipo-evento.component';
+import { CarteleraComponent } from './eventos/carteleras/cartelera/cartelera.component';
 const routes: Routes = [
   {
     path: '',
@@ -32,9 +35,17 @@ const routes: Routes = [
       { path: 'locales-beneficios', component: LocalesBeneficiosComponent },
       { path: 'salas-de-cine', component: SalasDeCineComponent },
       { path: 'peliculas', component: PeliculasComponent },
-      { path: 'importar-cartelera', component: ImportarCarteleraComponent },
       { path: 'salas-de-cine-crear', component: SalasDeCineCrearComponent },
       { path: 'peliculas-crear', component: PeliculasCrearComponent },
+      { path: 'importar-cartelera', component: ImportarCarteleraComponent },
+      { path: 'eventos/tipo-evento', component: TipoEventoComponent },
+      { path: 'eventos/eventos', component: EventosComponent },
+      { path: 'eventos/cartelera', component: CarteleraComponent },
+      
+      
+      
+
+      
       
 
       

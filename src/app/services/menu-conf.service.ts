@@ -39,7 +39,7 @@ export class MenuConfService {
             route: '/locales-rubros'
           },
           {
-            id: 'Listas',
+            id: 'LISTAS',
             label: translate('Listas'),
             route: '/locales-listas'
           },
@@ -57,17 +57,17 @@ export class MenuConfService {
         iconClasses: 'icon icon-cines',
         children: [
           {
-            id: 'salas de cine',
+            id: 'SALAS_DE_CINE',
             label: translate('Salas de cine'),
             route: '/salas-de-cine'
           },
           {
-            id: 'peliculas',
+            id: 'PELICULAS',
             label: translate('Peliculas'),
             route: '/peliculas'
           },
           {
-            id: 'importar-peliculas',
+            id: 'IMPORTAR_CARTELERA',
             label: translate('Importar cartelera'),
             route: '/importar-cartelera'
           },
@@ -81,6 +81,21 @@ export class MenuConfService {
         label: this.translationService.translate('EVENTOS'),
         iconClasses: 'icon icon-eventos',
         children: [
+          {
+            id: 'EVENTOS',
+            label: translate('Eventos'),
+            route: './eventos/eventos'
+          },
+          {
+            id: 'TIPO_EVENTO',
+            label: translate('Tipo de Evento'),
+            route: './eventos/tipo-evento'
+          },
+          {
+            id: 'CARTELERA',
+            label: translate('Cartelera'),
+            route: './eventos/cartelera'
+          },
 
         ],
       },

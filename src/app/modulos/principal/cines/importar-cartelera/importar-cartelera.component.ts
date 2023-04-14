@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ImportarCarteleraService } from 'src/app/services/cines/importar-cartelera/importar-cartelera.service';
+
 
 @Component({
   selector: 'app-importar-cartelera',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImportarCarteleraComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ImportarCarteleraService: ImportarCarteleraService) { }
+  
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  
+  
+
+ 
+  guardar(){
+
   }
 
 }

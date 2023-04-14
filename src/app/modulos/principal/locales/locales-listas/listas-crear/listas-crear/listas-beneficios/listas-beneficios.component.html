@@ -1,21 +1,5 @@
 <h2>Beneficios</h2>
 
-<div class="nav-buttons">
-  <mat-tab-group (selectedTabChange)="onTabChange($event)" [selectedIndex]="selectedTabIndex">
-    <mat-tab label="Datos de lista">
-      <ng-template matTabContent>
-      </ng-template>
-    </mat-tab>
-    <mat-tab label=" Beneficios">
-      <ng-template matTabContent>
-        <router-outlet name="listasBeneficios"></router-outlet>
-      </ng-template>
-    </mat-tab>
-  </mat-tab-group>
-</div>
-
-
-
 <div class="search-container">
   <mat-form-field appearance="outline">
     <mat-label>Filtrar marcas</mat-label>

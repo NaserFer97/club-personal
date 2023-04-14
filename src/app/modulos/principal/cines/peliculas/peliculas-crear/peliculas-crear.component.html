@@ -59,9 +59,9 @@
         <input matInput #input formControlName="sinopsis">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('sinopsis',form)}}</mat-error>
         <textarea matInput></textarea>
-      </mat-form-field>
+    </mat-form-field>
 
-   
+
     <div class="mb-3"></div>
 
 
@@ -69,7 +69,6 @@
         <button class="btn btn-primary" (click)="guardar()">
             Guardar
         </button>
-        <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">Volver</button>
 
 
     </div>
