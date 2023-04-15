@@ -79,7 +79,7 @@ export class CarteleraCrearComponent implements OnInit {
 
 
   volver() {
-    this.router.navigateByUrl('eeventos/cartelera');
+    this.router.navigateByUrl('eventos/cartelera');
   }
 }
 
