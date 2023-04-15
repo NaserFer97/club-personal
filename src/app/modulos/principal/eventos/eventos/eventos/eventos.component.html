@@ -1,1 +1,59 @@
-<p>eventos works!</p>
+<h2>Lista de Eventos</h2>
+
+<div style="display: flex; justify-content: end;">
+  <button (click)="crear()" class="btn btn-primary">Agregar </button>
+</div>
+
+<mat-form-field>
+  <mat-label>Filtrar resultados</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+
+<div class="mat-elevation-z2">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+      <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>
+      <td mat-cell *matCellDef="let row"> {{row.tipo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lugar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Lugar </th>
+      <td mat-cell *matCellDef="let row"> {{row.lugar}}</td>
+    </ng-container>
+
+  
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <div class="actions-wrapper">
+          <button mat-icon-button (click)="editar(row)">
+            <i class="icon-pencil"></i>
+          </button>
+          <button mat-icon-button (click)="borrar(row)">
+            <i class="icon-trash"></i>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">
+        <p *ngIf="input.value">No se encontraron resultados con la palabra "{{input.value}}"</p>
+        <p *ngIf="data.length==0">No hay datos</p>
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>
+

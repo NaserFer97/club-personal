@@ -33,6 +33,9 @@ import { PeliculasCrearComponent } from './cines/peliculas/peliculas-crear/pelic
 import { CarteleraComponent } from './eventos/carteleras/cartelera/cartelera.component';
 import { EventosComponent } from './eventos/eventos/eventos/eventos.component';
 import { TipoEventoComponent } from './eventos/tipo-evento/tipo-evento/tipo-evento.component';
+import { EventosCrearComponent } from './eventos/eventos/eventos/eventos-crear/eventos-crear/eventos-crear.component';
+import { TipoEventoCrearComponent } from './eventos/tipo-evento/tipo-evento/tipo-evento-crear/tipo-evento-crear/tipo-evento-crear.component';
+import { CarteleraCrearComponent } from './eventos/carteleras/cartelera/cartelera-crear/cartelera-crear/cartelera-crear.component';
 
 
 
@@ -58,6 +61,9 @@ import { TipoEventoComponent } from './eventos/tipo-evento/tipo-evento/tipo-even
     CarteleraComponent,
     EventosComponent,
     TipoEventoComponent,
+    EventosCrearComponent,
+    TipoEventoCrearComponent,
+    CarteleraCrearComponent,
     
     
     

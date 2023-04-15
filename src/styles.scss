@@ -70,6 +70,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  
 }
 
 body {
@@ -1112,7 +1113,12 @@ html i[class^="icon-"] {
   font-family: 'simple-line-icons' !important;
 }
 
-
+.actions-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
 
 
 

@@ -18,6 +18,9 @@ import { ImportarCarteleraComponent } from './cines/importar-cartelera/importar-
 import { EventosComponent } from './eventos/eventos/eventos/eventos.component';
 import { TipoEventoComponent } from './eventos/tipo-evento/tipo-evento/tipo-evento.component';
 import { CarteleraComponent } from './eventos/carteleras/cartelera/cartelera.component';
+import { EventosCrearComponent } from './eventos/eventos/eventos/eventos-crear/eventos-crear/eventos-crear.component';
+import { TipoEventoCrearComponent } from './eventos/tipo-evento/tipo-evento/tipo-evento-crear/tipo-evento-crear/tipo-evento-crear.component';
+import { CarteleraCrearComponent } from './eventos/carteleras/cartelera/cartelera-crear/cartelera-crear/cartelera-crear.component';
 const routes: Routes = [
   {
     path: '',
@@ -41,6 +44,12 @@ const routes: Routes = [
       { path: 'eventos/tipo-evento', component: TipoEventoComponent },
       { path: 'eventos/eventos', component: EventosComponent },
       { path: 'eventos/cartelera', component: CarteleraComponent },
+      { path: 'eventos/crear', component: EventosCrearComponent },
+      { path: 'eventos/crear', component: EventosCrearComponent },
+      { path: 'eventos/tipo-evento-crear', component: TipoEventoCrearComponent },
+      { path: 'eventos/cartelera-crear', component: CarteleraCrearComponent },
+
+
       
       
       

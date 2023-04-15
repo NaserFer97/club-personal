@@ -1,0 +1,28 @@
+<div [formGroup]="form" (ngSubmit)="guardar()">
+
+    <h2>Detalle de Tipo Evento</h2>
+
+    <mat-form-field style="width: 30em;" appearance="fill">
+        <mat-label class="inputText">Descripcion</mat-label>
+        <input matInput #input formControlName="tipoEvento">
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('tipoEvento',form)}}</mat-error>
+    </mat-form-field>
+    <div class="mb-3"></div>
+
+
+
+
+
+
+    <div style="margin-top: 3em;" class="button-container">
+        <button type="submit" class="btn btn-primary" (click)="guardar()">
+            Guardar
+        </button>
+        <button style="margin-left: 2em;" class="btn btn-secondary" (click)="volver()">Volver</button>
+
+
+    </div>
+
+
+
+</div>
