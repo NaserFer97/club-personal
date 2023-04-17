@@ -1,4 +1,4 @@
-
+<div class="scroll-container">
 <div class="main-wrapper" [ngClass]="{ 'main-wrapper--navigation-open': mainNavigationOpened }">
     <nav class="main-navigation">
       <asm-angular-sidebar-menu *ngIf="menuConfService.menu$ | async as menu" [menu]="menu" [mode]="currentSidebarMode"
@@ -39,3 +39,4 @@
       </div>
     </main>
   </div>
+</div>

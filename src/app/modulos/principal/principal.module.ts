@@ -40,7 +40,6 @@ import { CarteleraCrearComponent } from './eventos/carteleras/cartelera/carteler
 
 
 
-
 @NgModule({
   declarations: [
     InicioComponent,
@@ -87,7 +86,8 @@ import { CarteleraCrearComponent } from './eventos/carteleras/cartelera/carteler
     MatTableModule,
     FormsModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    
   ]
 })
 export class PrincipalModule { }
