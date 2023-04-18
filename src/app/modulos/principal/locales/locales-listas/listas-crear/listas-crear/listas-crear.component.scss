@@ -1,13 +1,7 @@
 .nav-buttons {
-    margin-bottom: 1rem;
-  }
-  
-  mat-toolbar {
-    background-color: transparent;
-    padding: 0;
-  }
-  
-  
+  margin-bottom: 1rem;
+}
+
 mat-toolbar {
   background-color: transparent;
   padding: 0;
@@ -15,19 +9,32 @@ mat-toolbar {
 
 .search-button {
   margin-left: 16px;
+   
+}
+.titulos{
+  width: 40px !important;
+}
+.beneficios-header{
+  width: 20px;
 }
 
-.titulos {
+
+.beneficios-header {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-} 
+  align-items: center;
+}
 
-  
+.search-container {
+  margin-left: 1rem;
+}
 
-  
-  
-  
-  
-  
-  
+.right-container {
+  position: relative;
+}
+
+.right-container h2 {
+  position: absolute;
+  top: -30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}

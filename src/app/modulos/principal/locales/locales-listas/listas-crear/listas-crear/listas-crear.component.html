@@ -17,19 +17,22 @@
     <textarea matInput></textarea>
   </mat-form-field>
 
-  <div class="titulos">
-    <h2>Beneficios</h2>
+ 
     
-    <h2 style="margin-right: 5em;">Beneficios seleccionados</h2>
+    
+  <div style="margin-bottom: -1em; width: 20px;">
+    <div class="beneficios-header">
+      <h2>Beneficios</h2>
+      <div class="search-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Filtrar beneficio</mat-label>
+          <input matInput (formControlName)="filterValue" (input)="applyFilter()" placeholder="Escribe para filtrar">
+        </mat-form-field>
+      </div>
     </div>
-    
-    
-    <div class="search-container"> 
-      <mat-form-field appearance="outline">
-        <mat-label>Filtrar marcas</mat-label>
-        <input matInput (formControlName)="filterValue" (input)="applyFilter()" placeholder="Escribe para filtrar">
-      </mat-form-field>
-    </div>
+   
+  </div>
+  
     
     <div class="main-container" style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between;">
       <div class="left-container" style="flex: 1; border: 1px solid #ccc; overflow-y: scroll; max-height: 300px; margin-right: 16px;">
@@ -41,16 +44,16 @@
       </div>
     
       <div class="middle-container" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; margin-right: 16px;">
-        <button class="btn btn-primary" (click)="addSelectedOptions()" style="margin-bottom: 16px; background: rgba(0, 0, 255, 0.746); border-color:rgba(0, 0, 255, 0.746) ;">
+        <button class="btn btn-primary" (click)="addSelectedOptions()">
           Agregar 
         </button>
-        <button class="btn btn-primary " style="background-color: red; border: red;" (click)="removeSelectedOptions()">
+        <button class="btn btn-secondary " style="margin-top: 1em;" (click)="removeSelectedOptions()">
           Quitar 
         </button>
       </div>
     
       <div class="right-container" style="flex: 1;">
-        
+        <h2>Beneficios seleccionados</h2>
         <div style="border: 1px solid #ccc; overflow-y: scroll; max-height: 300px;">
           <mat-selection-list #beneficiosList>
             <mat-list-option *ngFor="let row of beneficiosSeleccionados" [value]="row">
@@ -60,6 +63,7 @@
         </div>
       </div>
     </div>
+    
 
   <div style="margin-top: 3em;" class="button-container">
     <button class="btn btn-primary" (click)="guardar()">

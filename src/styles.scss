@@ -186,8 +186,11 @@ body {
 }
 .main-content {
   grid-area: content;
+  overflow-y: auto;
+  overflow-x: hidden;
   .outlet {
     padding: 0px 15px 0px 15px;
+    
   }
 }
 .main-navigation .asm-menu--mode-expandable:not(:hover) .input-search,
@@ -1038,7 +1041,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     display: block;
   }
   .main-content {
-    margin: 15px 45px;
+    margin:15px 0px 15px 45px;
   }
   .main-header {
     margin: 0px 45px;
