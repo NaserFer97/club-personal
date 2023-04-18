@@ -1,28 +1,8 @@
-.main-navigation {
-  grid-area: nav;
-  position: absolute;
-  background: #121212;
-  height: 100%;
-  z-index: 999;
-}
-.main-navigation {
-  width: 0px;
-}
-.main-wrapper.main-wrapper--navigation-open {
-  overflow: hidden;
-}
-.asm-menu-anchor__icon {
-  display: none;
-}
-.cdk-overlay-pane {
-  z-index: 1050 !important;
-}
-
 
 //TRABAJAR MAS LOS MEDIA QUERYS
 .main-wrapper{
   .main-content {
-    margin-left: 230px;
+    margin-left: 0px;
   }
 }
 
@@ -31,9 +11,6 @@
     margin-left: 0px;
   }
 } 
-
-
-
 
 /*
 ####################################################
@@ -51,27 +28,34 @@ Bootstrap 5 breakpoints
 // 0 - 575
 // 576 - 767
 // 768 - 992
-// 993 - 1999
+// 993 - 1199
 // 1200 - X
 
 //Definicion de ejes de la pagina
 
 
 @media (max-width: 1199px) {
-  
   .main-header {
-    margin: 0px 275px;
-    padding: 0px 15px; //69
-    width: 80%;
+   
   }
 
-  /* .logout {
-    display: flex !important;
-  }*/
 }
 
 @media (max-width: 992px) {
 
+  .main-header {
+    padding: 0px 15px; //15
+    justify-content: space-between;
+  }
+
+  .main-header {
+    margin: 0px 231px; //45px, 231
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    grid-template-columns: 10% 80% 10%;
+    width: 71%;
+  }
   .logo-principal {
     display: none;
   }
@@ -81,26 +65,11 @@ Bootstrap 5 breakpoints
   .main-wrapper {
     grid-template-rows: 100px auto !important; //55px
   }
-  .main-header {
-    padding: 0px 15px !important; //15
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  
   .data-user {
     display: flex !important;
   }
-  .main-header {
-    margin: 0px 291px; //291  231
-    height: 55px;
-    position: fixed;
-    background-color: white;
-    z-index: 999;
-    width: 100%;
-    grid-template-columns: 10% 80% 10%;
-    display: grid;
-    width: 70%;
-  }
+  
 
   .main-wrapper--navigation-open {
     .main-navigation {
@@ -133,36 +102,32 @@ Bootstrap 5 breakpoints
 
 @media (max-width: 767px) {
   .main-wrapper.main-wrapper--navigation-open{
-    margin-left: 0px;
+  }
+  .main-wrapper .main-content{
   }
 
-  .main-wrapper .main-content{
-    margin-left: 15px;
- }
-  .main-wrapper {
-    grid-template-rows: 55px auto; //tachado
+  .main-content{
+    padding-left: 15px;
+    padding-right: 15px;
   }
+
   .logo-principal {
     display: flex;
   }
   .main-header {
     padding: 0px 15px !important;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
   }
   .data-user {
     display: none !important;
   }
   .main-header {
     margin: 0px 0px !important;
-    height: 55px;
     position: fixed;
     background-color: white;
     z-index: 999;
     width: 100%;
     grid-template-columns: 10% 80% 10%;
-    display: grid;
   }
 
   .main-wrapper.main-wrapper--navigation-open {
@@ -199,19 +164,22 @@ Bootstrap 5 breakpoints
 }
 
 @media (max-width: 575px) {
-  .main-wrapper.main-wrapper--navigation-open {
-    margin-left: 0px;
-}
-  .main-wrapper .main-content{
-    margin-left: 15px;
-  }
-
  
+
+  .main-content{
+    padding-left: 15px;
+    padding-right: 15px;
+  } 
+
   .main-header {
     margin: 0px 0px !important;
   }
   .logo-principal {
     display: flex !important;
+  }
+  .main-wrapper.main-wrapper--navigation-open {
+  }
+  .main-wrapper .main-content{
   }
 }
 
@@ -234,54 +202,39 @@ Bootstrap 5 breakpoints
     margin: 0px 231px;
     padding: 0px 15px;
   }
-  .main-content {
-    //margin: 15px 63px !important;
-  }
+  
   .logo-principal {
     display: none;
   }
 }
 
 @media (min-width: 993px) {
-  // .main-wrapper.main-wrapper--navigation-open {
-  //   grid-template-columns: 23% 77%; //23 77
-  // }
   .main-wrapper--navigation-open {
     .main-navigation {
       padding-top: 15px !important;
-    }
-    
+    }  
   }
   .main-wrapper.main-wrapper--navigation-open{
     .main-content{
       margin-left: 243px;
     }
    } 
-
+  
   .container-accesos {
     display: block;
-  }
-  .main-content {
-    margin: 15px 45px;
   }
 
   .main-header {
     padding: 0px 15px; //15
-    display: flex;
     justify-content: space-between;
-    align-items: center;
   }
 
   .main-header {
-    margin: 0px 231px; //ESTO ES CUANDO NO ES PARA MOVIL
     margin: 0px 231px; //45px, 231
-    height: 55px;
     position: fixed;
     background-color: white;
     z-index: 999;
-    width: 100%;
     grid-template-columns: 10% 80% 10%;
-    display: grid;
     width: 77%;
   }
   .sidebar-toggle {
@@ -311,15 +264,13 @@ Bootstrap 5 breakpoints
 
    .main-wrapper.main-wrapper--navigation-open{
     .main-content{
-      margin-left: 273px;
+      margin-left: 273px;//273px
     }
    } 
 
   .main-header {
     padding: 0px 50px !important;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
   }
   .logo-bar {
     display: none !important;
@@ -332,13 +283,11 @@ Bootstrap 5 breakpoints
 
   .main-header {
     margin: 0px 231px !important; //231
-    height: 55px;
     position: fixed;
     background-color: white;
     z-index: 999;
     width: 85%; //ANCHO
     grid-template-columns: 10% 80% 10%;
-    display: grid;
   }
   .main-wrapper--navigation-open {
     .main-navigation {
