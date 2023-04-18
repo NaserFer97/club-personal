@@ -21,6 +21,10 @@ import { CarteleraComponent } from './eventos/carteleras/cartelera/cartelera.com
 import { EventosCrearComponent } from './eventos/eventos/eventos/eventos-crear/eventos-crear/eventos-crear.component';
 import { TipoEventoCrearComponent } from './eventos/tipo-evento/tipo-evento/tipo-evento-crear/tipo-evento-crear/tipo-evento-crear.component';
 import { CarteleraCrearComponent } from './eventos/carteleras/cartelera/cartelera-crear/cartelera-crear/cartelera-crear.component';
+import { ProductosComponent } from './productos/productos/productos/productos.component';
+import { ProductosCrearComponent } from './productos/productos/productos/productos-crear/productos-crear/productos-crear.component';
+import { PromocionesComponent } from './productos/promociones/promociones/promociones.component';
+import { PromocionesCrearComponent } from './productos/promociones/promociones/promociones-crear/promociones-crear/promociones-crear.component';
 const routes: Routes = [
   {
     path: '',
@@ -45,9 +49,12 @@ const routes: Routes = [
       { path: 'eventos/eventos', component: EventosComponent },
       { path: 'eventos/cartelera', component: CarteleraComponent },
       { path: 'eventos/crear', component: EventosCrearComponent },
-      { path: 'eventos/crear', component: EventosCrearComponent },
       { path: 'eventos/tipo-evento-crear', component: TipoEventoCrearComponent },
       { path: 'eventos/cartelera-crear', component: CarteleraCrearComponent },
+      { path: 'productos/productos', component: ProductosComponent },
+      { path: 'productos/productos-crear', component: ProductosCrearComponent },
+      { path: 'productos/promociones', component: PromocionesComponent },
+      { path: 'productos/promociones-crear', component: PromocionesCrearComponent },
 
 
       

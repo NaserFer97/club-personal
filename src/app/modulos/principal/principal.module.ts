@@ -36,6 +36,10 @@ import { TipoEventoComponent } from './eventos/tipo-evento/tipo-evento/tipo-even
 import { EventosCrearComponent } from './eventos/eventos/eventos/eventos-crear/eventos-crear/eventos-crear.component';
 import { TipoEventoCrearComponent } from './eventos/tipo-evento/tipo-evento/tipo-evento-crear/tipo-evento-crear/tipo-evento-crear.component';
 import { CarteleraCrearComponent } from './eventos/carteleras/cartelera/cartelera-crear/cartelera-crear/cartelera-crear.component';
+import { ProductosComponent } from './productos/productos/productos/productos.component';
+import { ProductosCrearComponent } from './productos/productos/productos/productos-crear/productos-crear/productos-crear.component';
+import { PromocionesComponent } from './productos/promociones/promociones/promociones.component';
+import { PromocionesCrearComponent } from './productos/promociones/promociones/promociones-crear/promociones-crear/promociones-crear.component';
 
 
 
@@ -63,6 +67,10 @@ import { CarteleraCrearComponent } from './eventos/carteleras/cartelera/carteler
     EventosCrearComponent,
     TipoEventoCrearComponent,
     CarteleraCrearComponent,
+    ProductosComponent,
+    ProductosCrearComponent,
+    PromocionesComponent,
+    PromocionesCrearComponent,
     
     
     

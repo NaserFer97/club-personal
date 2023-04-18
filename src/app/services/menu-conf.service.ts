@@ -105,7 +105,16 @@ export class MenuConfService {
         label: this.translationService.translate('PRODUCTOS'),
         iconClasses: 'icon icon-productos',
         children: [
-
+          {
+            id: 'PRODUCTOS',
+            label: translate('Productos'),
+            route: './productos/productos'
+          },
+          {
+            id: 'PROMOCIONES',
+            label: translate('Promociones'),
+            route: './productos/promociones'
+          }
         ],
       },
       {

@@ -34,8 +34,9 @@
   </div>
   
     
-    <div class="main-container" style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between;">
-      <div class="left-container" style="flex: 1; border: 1px solid #ccc; overflow-y: scroll; max-height: 300px; margin-right: 16px;">
+    <div class="main-container " style="display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; ">
+      <div class="left-container" style="flex: 1; border: 1px solid #ccc; overflow-y: scroll; max-height: 300px; margin-right: 16px;   background-color: #f5f5f5;
+      ">
         <mat-selection-list #marcasList>
           <mat-list-option *ngFor="let row of dataSource" [value]="row">
             {{row.lista}}
@@ -43,7 +44,7 @@
         </mat-selection-list>
       </div>
     
-      <div class="middle-container" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; margin-right: 16px;">
+      <div class="middle-container" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; margin-right: 16px; margin-top: 6em;">
         <button class="btn btn-primary" (click)="addSelectedOptions()">
           Agregar 
         </button>
@@ -54,7 +55,8 @@
     
       <div class="right-container" style="flex: 1;">
         <h2>Beneficios seleccionados</h2>
-        <div style="border: 1px solid #ccc; overflow-y: scroll; max-height: 300px;">
+        <div class="scroll-container" style="border: 1px solid #ccc; overflow-y: scroll; max-height: 300px;   background-color: #f5f5f5;
+        ">
           <mat-selection-list #beneficiosList>
             <mat-list-option *ngFor="let row of beneficiosSeleccionados" [value]="row">
               {{row.lista}}

@@ -25,8 +25,8 @@ export class ListasCrearComponent implements OnInit {
 
 
   get nombreControl() { return this.form.get('nombre'); }
-  get rubroControl() { return this.form.get('rubro'); }
-  get fechaControl() { return this.form.get('fecha'); }
+  get descripcionControl() { return this.form.get('descripcion'); }
+
 
   localId: number | null = null;
 
@@ -38,11 +38,27 @@ export class ListasCrearComponent implements OnInit {
     { lista: 'Cines Itau del Sol - 2x1' },
     { lista: 'Five Hotel - Day Use' },
     { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
     
   ];
 
   beneficiosSeleccionados = [
-    { lista: '' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
+    { lista: 'INDIO - Descuento' },
    
   ];
 

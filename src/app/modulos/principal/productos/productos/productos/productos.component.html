@@ -1,0 +1,87 @@
+<h2>Listado de productos</h2>
+
+<div style="display: flex; justify-content: end;">
+  <button (click)="crear()" class="btn btn-primary">Agregar </button>
+</div>
+
+<mat-form-field>
+  <mat-label>Filtrar resultados</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+
+<div class="mat-elevation-z2">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Codigo </th>
+      <td mat-cell *matCellDef="let row"> {{row.codigo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion </th>
+      <td mat-cell *matCellDef="let row"> {{row.descripcion}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> cantidad </th>
+        <td mat-cell *matCellDef="let row"> {{row.cantidad}}</td>
+      </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo </th>
+      <td mat-cell *matCellDef="let row"> {{row.tipo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tprem">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> TPREM </th>
+        <td mat-cell *matCellDef="let row"> {{row.tprem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="promocion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Promocion </th>
+        <td mat-cell *matCellDef="let row"> {{row.promocion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="puntos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Puntos </th>
+        <td mat-cell *matCellDef="let row"> {{row.puntos}} </td>
+      </ng-container>
+
+
+    <ng-container matColumnDef="activo">
+        <th mat-header-cell *matHeaderCellDef> Activo </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox [(ngModel)]="row.activo" (change)="activo(row)"></mat-checkbox>
+        </td>
+      </ng-container>
+
+  
+
+    <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          <div class="actions-wrapper">
+            <button mat-icon-button (click)="editar(row)">
+              <i class="icon-pencil"></i>
+            </button>
+            <button mat-icon-button (click)="borrar(row)">
+              <i class="icon-trash"></i>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+      
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">
+        <p *ngIf="input.value">No se encontraron resultados con la palabra "{{input.value}}"</p>
+        <p *ngIf="data.length==0">No hay datos</p>
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>
