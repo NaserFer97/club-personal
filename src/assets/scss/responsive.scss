@@ -1,0 +1,371 @@
+.main-navigation {
+  grid-area: nav;
+  position: absolute;
+  background: #121212;
+  height: 100%;
+  z-index: 999;
+}
+.main-navigation {
+  width: 0px;
+}
+.main-wrapper.main-wrapper--navigation-open {
+  overflow: hidden;
+}
+.asm-menu-anchor__icon {
+  display: none;
+}
+.cdk-overlay-pane {
+  z-index: 1050 !important;
+}
+
+
+//TRABAJAR MAS LOS MEDIA QUERYS
+.main-wrapper{
+  .main-content {
+    margin-left: 230px;
+  }
+}
+
+.main-wrapper.main-wrapper--navigation-open {
+  .main-content {
+    margin-left: 0px;
+  }
+} 
+
+
+
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 5 breakpoints
+*/
+
+//El eje se ve mal en diferentes resoluciones
+
+// 0 - 575
+// 576 - 767
+// 768 - 992
+// 993 - 1999
+// 1200 - X
+
+//Definicion de ejes de la pagina
+
+
+@media (max-width: 1199px) {
+  
+  .main-header {
+    margin: 0px 275px;
+    padding: 0px 15px; //69
+    width: 80%;
+  }
+
+  /* .logout {
+    display: flex !important;
+  }*/
+}
+
+@media (max-width: 992px) {
+
+  .logo-principal {
+    display: none;
+  }
+  .logout {
+    display: flex !important;
+  }
+  .main-wrapper {
+    grid-template-rows: 100px auto !important; //55px
+  }
+  .main-header {
+    padding: 0px 15px !important; //15
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .data-user {
+    display: flex !important;
+  }
+  .main-header {
+    margin: 0px 291px; //291  231
+    height: 55px;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    width: 100%;
+    grid-template-columns: 10% 80% 10%;
+    display: grid;
+    width: 70%;
+  }
+
+  .main-wrapper--navigation-open {
+    .main-navigation {
+      padding-top: 15px !important;
+    }
+  }
+  .button-filtro {
+    display: flex;
+    justify-content: left;
+  }
+  .acciones {
+    flex-direction: column;
+  }
+  .descargar {
+    margin: 15px 0px;
+  }
+  .filtro {
+    width: 100%;
+  }
+  .descargar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .filtro {
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main-wrapper.main-wrapper--navigation-open{
+    margin-left: 0px;
+  }
+
+  .main-wrapper .main-content{
+    margin-left: 15px;
+ }
+  .main-wrapper {
+    grid-template-rows: 55px auto; //tachado
+  }
+  .logo-principal {
+    display: flex;
+  }
+  .main-header {
+    padding: 0px 15px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .data-user {
+    display: none !important;
+  }
+  .main-header {
+    margin: 0px 0px !important;
+    height: 55px;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    width: 100%;
+    grid-template-columns: 10% 80% 10%;
+    display: grid;
+  }
+
+  .main-wrapper.main-wrapper--navigation-open {
+     grid-template-columns: 0% 100% !important;
+  }
+
+  .main-wrapper--navigation-open {
+    .main-navigation {
+      padding-top: 100px !important;
+    }
+  }
+  .button-filtro {
+    display: flex;
+    justify-content: left;
+  }
+  .acciones {
+    flex-direction: column;
+  }
+  .descargar {
+    margin: 15px 0px;
+  }
+  .filtro {
+    width: 100%;
+  }
+  .descargar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .filtro {
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .main-wrapper.main-wrapper--navigation-open {
+    margin-left: 0px;
+}
+  .main-wrapper .main-content{
+    margin-left: 15px;
+  }
+
+ 
+  .main-header {
+    margin: 0px 0px !important;
+  }
+  .logo-principal {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .main-wrapper--navigation-open.main-navigation {
+    padding-top: 100px;
+  }
+  .logo-principal {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-wrapper.main-wrapper--navigation-open{
+    .main-content{
+      margin-left: 242px;
+    }
+   } 
+  .main-header {
+    margin: 0px 231px;
+    padding: 0px 15px;
+  }
+  .main-content {
+    //margin: 15px 63px !important;
+  }
+  .logo-principal {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  // .main-wrapper.main-wrapper--navigation-open {
+  //   grid-template-columns: 23% 77%; //23 77
+  // }
+  .main-wrapper--navigation-open {
+    .main-navigation {
+      padding-top: 15px !important;
+    }
+    
+  }
+  .main-wrapper.main-wrapper--navigation-open{
+    .main-content{
+      margin-left: 243px;
+    }
+   } 
+
+  .container-accesos {
+    display: block;
+  }
+  .main-content {
+    margin: 15px 45px;
+  }
+
+  .main-header {
+    padding: 0px 15px; //15
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-header {
+    margin: 0px 231px; //ESTO ES CUANDO NO ES PARA MOVIL
+    margin: 0px 231px; //45px, 231
+    height: 55px;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    width: 100%;
+    grid-template-columns: 10% 80% 10%;
+    display: grid;
+    width: 77%;
+  }
+  .sidebar-toggle {
+    display: flex !important;
+  }
+
+  .notificaciones {
+    border-right: 2px solid #7a7a7a;
+    p {
+      display: block;
+    }
+  }
+  .data-user {
+    display: flex !important;
+  }
+  .logo-principal {
+    display: none;
+  }
+
+  .btn-crear {
+    background-color: #62b865;
+    color: white;
+  }
+}
+
+@media (min-width: 1200px) {
+
+   .main-wrapper.main-wrapper--navigation-open{
+    .main-content{
+      margin-left: 273px;
+    }
+   } 
+
+  .main-header {
+    padding: 0px 50px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-bar {
+    display: none !important;
+  }
+  .main-header.data-user {
+  }
+  .main-header.logout {
+    display: flex !important;
+  }
+
+  .main-header {
+    margin: 0px 231px !important; //231
+    height: 55px;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    width: 85%; //ANCHO
+    grid-template-columns: 10% 80% 10%;
+    display: grid;
+  }
+  .main-wrapper--navigation-open {
+    .main-navigation {
+      padding-top: 15px !important;
+      width: 230px !important;
+    }
+  }
+  .button-filtro {
+    display: flex;
+    justify-content: left;
+  }
+  .acciones {
+    flex-direction: column;
+  }
+  .descargar {
+    margin: 15px 0px;
+  }
+  .filtro {
+    width: 100%;
+  }
+  .descargar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .filtro {
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+}
