@@ -37,6 +37,7 @@
             "styles": [
               "src/assets/fonts/iconos.css",
               "node_modules/animate.css/animate.min.css",
+              "src/assets/scss/responsive.scss",
               "src/styles.scss"
               
             ],

@@ -147,12 +147,10 @@ body {
   grid-template-rows: 80px auto;
   height: 100vh;
 }
-.main-wrapper.main-wrapper--navigation-open {
-  grid-template-columns: 12% 88%;
-}
+
 .main-header {
   grid-area: header;
-  margin: 0px 0px;
+  //margin: 0px 0px;
   display: flex;
   border-bottom: 1px solid #7a7a7a4d;
   height: 80px;
@@ -849,11 +847,6 @@ table {
 }
 
 
-
-
-
-
-
 .enlace-icono {
   display: flex;
   align-items: center;
@@ -900,7 +893,7 @@ table {
   display: none !important;
 }
 .logout {
-  display: none !important;
+  display: none ;
 }
 .notificaciones {
   width: 20%;
@@ -913,7 +906,7 @@ table {
 
 .logo-principal {
   height: 30px;
-  display: flex;
+  //display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -962,114 +955,6 @@ table {
   background-color: #62b865;
   color: white;
 }
-/*
-####################################################
-M E D I A  Q U E R I E S
-####################################################
-*/
-
-/*
-::::::::::::::::::::::::::::::::::::::::::::::::::::
-Bootstrap 5 breakpoints
-*/
-
-/* 
-Extra small devices (portrait phones, less than 576px) 
-No media query since this is the default in Bootstrap because it is "mobile first"
-*/
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {
-}
-@media (max-width: 992px) {
-  .main-wrapper {
-    grid-template-rows: 55px auto;
-  }
-  .main-header {
-    padding: 0px 15px !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .data-user {
-    display: none !important;
-  }
-  .main-header {
-    height: 55px;
-    position: fixed;
-    background-color: white;
-    z-index: 999;
-    width: 100%;
-    grid-template-columns: 10% 80% 10%;
-    display: grid;
-  }
-  .main-wrapper--navigation-open {
-    .main-navigation {
-      padding-top: 55px;
-    }
-  }
-  .button-filtro {
-    display: flex;
-    justify-content: left;
-  }
-  .acciones {
-    flex-direction: column;
-  }
-  .descargar {
-    margin: 15px 0px;
-  }
-  .filtro {
-    width: 100%;
-  }
-  .descargar {
-    width: 100%;
-    justify-content: flex-end;
-  }
-  .filtro {
-    .btn-primary {
-      margin-top: 20px;
-    }
-  }
-}
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 993px) {
-  .container-accesos {
-    display: block;
-  }
-  .main-content {
-    padding-right:15px;
-    margin:15px 0px 15px 45px;
-    
-  }
-  .main-header {
-    margin: 0px 45px;
-  }
-  .sidebar-toggle {
-    display: flex !important;
-  }
-  .logout {
-    display: flex !important;
-  }
-  .notificaciones {
-    border-right: 2px solid #7a7a7a;
-    p {
-      display: block;
-    }
-  }
-  .data-user {
-    display: flex;
-  }
-  .logo-principal {
-    display: none;
-  }
-
- 
-
-}
 
 .main-navigation {
   grid-area: nav;
@@ -1086,28 +971,6 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 }
 .asm-menu-anchor__icon {
   display: none;
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1200px) {
-  .cuentas {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 0fr));
-  }
-}
-@media (min-width: 1200px) {
-}
-
-/* Extra extra large devices (extra large desktops, 1400px and up) */
-@media (min-width: 1400px) {
-}
-
-/*
-::::::::::::::::::::::::::::::::::::::::::::::::::::
-Custom media queries
-*/
-
-/* Set width to make card deck cards 100% width */
-@media (max-width: 950px) {
 }
 
 .cdk-overlay-pane {

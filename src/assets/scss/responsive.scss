@@ -1,0 +1,320 @@
+
+//TRABAJAR MAS LOS MEDIA QUERYS
+.main-wrapper{
+  .main-content {
+    margin-left: 0px;
+  }
+}
+
+.main-wrapper.main-wrapper--navigation-open {
+  .main-content {
+    margin-left: 0px;
+  }
+} 
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 5 breakpoints
+*/
+
+//El eje se ve mal en diferentes resoluciones
+
+// 0 - 575
+// 576 - 767
+// 768 - 992
+// 993 - 1199
+// 1200 - X
+
+//Definicion de ejes de la pagina
+
+
+@media (max-width: 1199px) {
+  .main-header {
+   
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .main-header {
+    padding: 0px 15px; //15
+    justify-content: space-between;
+  }
+
+  .main-header {
+    margin: 0px 231px; //45px, 231
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    grid-template-columns: 10% 80% 10%;
+    width: 71%;
+  }
+  .logo-principal {
+    display: none;
+  }
+  .logout {
+    display: flex !important;
+  }
+  .main-wrapper {
+    grid-template-rows: 100px auto !important; //55px
+  }
+  
+  .data-user {
+    display: flex !important;
+  }
+  
+
+  .main-wrapper--navigation-open {
+    .main-navigation {
+      padding-top: 15px !important;
+    }
+  }
+  .button-filtro {
+    display: flex;
+    justify-content: left;
+  }
+  .acciones {
+    flex-direction: column;
+  }
+  .descargar {
+    margin: 15px 0px;
+  }
+  .filtro {
+    width: 100%;
+  }
+  .descargar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .filtro {
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main-wrapper.main-wrapper--navigation-open{
+  }
+  .main-wrapper .main-content{
+  }
+
+  .main-content{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .logo-principal {
+    display: flex;
+  }
+  .main-header {
+    padding: 0px 15px !important;
+    justify-content: space-between;
+  }
+  .data-user {
+    display: none !important;
+  }
+  .main-header {
+    margin: 0px 0px !important;
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    width: 100%;
+    grid-template-columns: 10% 80% 10%;
+  }
+
+  .main-wrapper.main-wrapper--navigation-open {
+     grid-template-columns: 0% 100% !important;
+  }
+
+  .main-wrapper--navigation-open {
+    .main-navigation {
+      padding-top: 100px !important;
+    }
+  }
+  .button-filtro {
+    display: flex;
+    justify-content: left;
+  }
+  .acciones {
+    flex-direction: column;
+  }
+  .descargar {
+    margin: 15px 0px;
+  }
+  .filtro {
+    width: 100%;
+  }
+  .descargar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .filtro {
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+ 
+
+  .main-content{
+    padding-left: 15px;
+    padding-right: 15px;
+  } 
+
+  .main-header {
+    margin: 0px 0px !important;
+  }
+  .logo-principal {
+    display: flex !important;
+  }
+  .main-wrapper.main-wrapper--navigation-open {
+  }
+  .main-wrapper .main-content{
+  }
+}
+
+@media (min-width: 576px) {
+  .main-wrapper--navigation-open.main-navigation {
+    padding-top: 100px;
+  }
+  .logo-principal {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-wrapper.main-wrapper--navigation-open{
+    .main-content{
+      margin-left: 242px;
+    }
+   } 
+  .main-header {
+    margin: 0px 231px;
+    padding: 0px 15px;
+  }
+  
+  .logo-principal {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  .main-wrapper--navigation-open {
+    .main-navigation {
+      padding-top: 15px !important;
+    }  
+  }
+  .main-wrapper.main-wrapper--navigation-open{
+    .main-content{
+      margin-left: 243px;
+    }
+   } 
+  
+  .container-accesos {
+    display: block;
+  }
+
+  .main-header {
+    padding: 0px 15px; //15
+    justify-content: space-between;
+  }
+
+  .main-header {
+    margin: 0px 231px; //45px, 231
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    grid-template-columns: 10% 80% 10%;
+    width: 77%;
+  }
+  .sidebar-toggle {
+    display: flex !important;
+  }
+
+  .notificaciones {
+    border-right: 2px solid #7a7a7a;
+    p {
+      display: block;
+    }
+  }
+  .data-user {
+    display: flex !important;
+  }
+  .logo-principal {
+    display: none;
+  }
+
+  .btn-crear {
+    background-color: #62b865;
+    color: white;
+  }
+}
+
+@media (min-width: 1200px) {
+
+   .main-wrapper.main-wrapper--navigation-open{
+    .main-content{
+      margin-left: 273px;//273px
+    }
+   } 
+
+  .main-header {
+    padding: 0px 50px !important;
+    justify-content: space-between;
+  }
+  .logo-bar {
+    display: none !important;
+  }
+  .main-header.data-user {
+  }
+  .main-header.logout {
+    display: flex !important;
+  }
+
+  .main-header {
+    margin: 0px 231px !important; //231
+    position: fixed;
+    background-color: white;
+    z-index: 999;
+    width: 85%; //ANCHO
+    grid-template-columns: 10% 80% 10%;
+  }
+  .main-wrapper--navigation-open {
+    .main-navigation {
+      padding-top: 15px !important;
+      width: 230px !important;
+    }
+  }
+  .button-filtro {
+    display: flex;
+    justify-content: left;
+  }
+  .acciones {
+    flex-direction: column;
+  }
+  .descargar {
+    margin: 15px 0px;
+  }
+  .filtro {
+    width: 100%;
+  }
+  .descargar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .filtro {
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+}
