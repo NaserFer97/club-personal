@@ -25,6 +25,14 @@ import { ProductosComponent } from './productos/productos/productos/productos.co
 import { ProductosCrearComponent } from './productos/productos/productos/productos-crear/productos-crear/productos-crear.component';
 import { PromocionesComponent } from './productos/promociones/promociones/promociones.component';
 import { PromocionesCrearComponent } from './productos/promociones/promociones/promociones-crear/promociones-crear/promociones-crear.component';
+import { AgenciasEntregaComponent } from './premios-tangibles/agencias-entrega/agencias-entrega/agencias-entrega.component';
+import { AltaPremioComponent } from './premios-tangibles/alta-premio/alta-premio/alta-premio.component';
+import { BajaPremioComponent } from './premios-tangibles/baja-premio/baja-premio/baja-premio.component';
+import { EntregarPremioComponent } from './premios-tangibles/entregar-premio/entregar-premio/entregar-premio.component';
+import { ReposicionStockComponent } from './premios-tangibles/reposicion-stock-deposito/reposicion-stock/reposicion-stock.component';
+import { StockPremiosComponent } from './premios-tangibles/stock-premios/stock-premios/stock-premios.component';
+import { TrazabilidadProductosComponent } from './premios-tangibles/trazabilidad-productos/trazabilidad-productos/trazabilidad-productos.component';
+import { AgenciasCrearComponent } from './premios-tangibles/agencias-entrega/agencias-entrega/agencias-crear/agencias-crear/agencias-crear.component';
 const routes: Routes = [
   {
     path: '',
@@ -55,6 +63,15 @@ const routes: Routes = [
       { path: 'productos/productos-crear', component: ProductosCrearComponent },
       { path: 'productos/promociones', component: PromocionesComponent },
       { path: 'productos/promociones-crear', component: PromocionesCrearComponent },
+      { path: 'premios-tangibles/agencias-entrega', component: AgenciasEntregaComponent },
+      { path: 'premios-tangibles/alta-premio', component: AltaPremioComponent },
+      { path: 'premios-tangibles/baja-premio', component: BajaPremioComponent },
+      { path: 'premios-tangibles/entrgar-premio', component: EntregarPremioComponent },
+      { path: 'premios-tangibles/reposicion-stock', component: ReposicionStockComponent },
+      { path: 'premios-tangibles/stock-premios', component: StockPremiosComponent },
+      { path: 'premios-tangibles/trazabilidad-productos', component: TrazabilidadProductosComponent },
+      { path: 'premios-tangibles/agencias-crear', component: AgenciasCrearComponent },
+
 
 
       

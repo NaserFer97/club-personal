@@ -7,13 +7,9 @@ mat-toolbar {
   padding: 0;
 }
 
-.search-button {
-  margin-left: 16px;
-   
-}
-.titulos{
-  width: 40px !important;
-}
+
+
+
 .beneficios-header{
   width: 20px;
 }
@@ -25,19 +21,12 @@ mat-toolbar {
 }
 
 .search-container {
-  margin-left: 1rem;
+ width: 3em;
 }
 
-.right-container {
-  position: relative;
-}
 
-.right-container h2 {
-  position: absolute;
-  top: -30px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
+
+
 
 .left-container::-webkit-scrollbar,
 .scroll-container::-webkit-scrollbar {

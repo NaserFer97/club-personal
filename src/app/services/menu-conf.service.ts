@@ -122,6 +122,41 @@ export class MenuConfService {
         label: this.translationService.translate('PREMIOS_TANGIBLES'),
         iconClasses: 'icon icon-premios',
         children: [
+          {
+            id: 'REPOSICION_STOCK',
+            label: translate('Reposicion Stock Deposito'),
+            route: 'premios-tangibles/reposicion-stock'
+          },
+          {
+            id: 'AGENCIAS_DE_ENTREGA',
+            label: translate('Agencias de Entrega'),
+            route: 'premios-tangibles/agencias-entrega'
+          },
+          {
+            id: 'ALTA_PREMIO_DISPONIBLE',
+            label: translate('Alta premio a Disponible'),
+            route: 'premios-tangibles/alta-premio'
+          },
+          {
+            id: 'BAJA_PREMIO_DISPONIBLE',
+            label: translate('Baja premio a Deposito'),
+            route: 'premios-tangibles/baja-premio'
+          },
+          {
+            id: 'STOCK_PREMIOS',
+            label: translate('Stock de Premios'),
+            route: 'premios-tangibles/stock-premios'
+          },
+          {
+            id: 'TRAZABILIDAD_PRODUCTOS',
+            label: translate('Trazabilidad productos'),
+            route: 'premios-tangibles/trazabilidad-productos'
+          },
+          {
+            id: 'ENTREGAR_PREMIO',
+            label: translate('Entregar premio'),
+            route: 'premios-tangibles/entrgar-premio'
+          },
 
         ],
       },
