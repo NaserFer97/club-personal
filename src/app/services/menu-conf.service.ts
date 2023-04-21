@@ -163,9 +163,9 @@ export class MenuConfService {
       {
         id: 'RESUMEN_DE_CANJES',
         label: this.translationService.translate('RESUMEN_DE_CANJES'),
-        children: [
-
-        ],
+        route: '/resumen-canjes',
+         
+        
       }
     ];
 

@@ -1,1 +1,28 @@
-<p>trazabilidad-productos works!</p>
+<div [formGroup]="form" (ngSubmit)="guardar()">
+
+    <h2>Momientos de productos</h2>
+ 
+
+    <mat-form-field style="width: 30em;" appearance="fill">
+        <mat-label class="inputText">Producto</mat-label>
+        <input matInput [matAutocomplete]="auto" formControlName="producto">
+
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="optionSelected($event)">
+            <mat-option *ngFor="let linea of filteredLineas | async" [value]="linea.id">
+                {{linea.text}}
+              </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('producto', form)}}</mat-error>
+      </mat-form-field>
+
+    <div class="mb-3"></div>
+
+    <div style="margin-top: 3em;" class="button-container">
+        <button class="btn btn-primary" (click)="guardar()">
+            Guardar
+        </button>
+    </div>
+
+
+
+    </div>

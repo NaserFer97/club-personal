@@ -1,1 +1,18 @@
-<p>entregar-premio works!</p>
+<div [formGroup]="form" (ngSubmit)="guardar()">
+
+<mat-form-field style="width: 30em;" appearance="fill">
+    <mat-label class="inputText">Linea</mat-label>
+    <input matInput #input formControlName="linea">
+    <mat-error *ngIf="form.invalid">{{getErrorMessage('linea',form)}}</mat-error>
+</mat-form-field>
+<button style="margin-left: 1em;" class="btn btn-secondary">
+   <i class="icon-magnifier"></i> Buscar
+</button>
+<div class="mb-3"></div>
+
+<button class="btn btn-primary" (click)="guardar()">
+    Guardar
+</button>
+
+
+</div>

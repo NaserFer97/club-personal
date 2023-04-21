@@ -1,37 +1,31 @@
 <div [formGroup]="form" (ngSubmit)="guardar()">
 
-    <h2>Transferencia a Disponibles</h2>
+    <h2>Alta de Premio</h2>
+    <h3>Seleccione el producto e ingrese la Cantidad</h3>
 
     <mat-form-field style="width: 30em;" appearance="fill">
         <mat-label class="inputText">Producto</mat-label>
-        <input matInput  #input formControlName="producto">
-        <mat-error *ngIf="form.invalid">{{getErrorMessage('producto',form)}}</mat-error>
-    </mat-form-field>
+        <input matInput [matAutocomplete]="auto" formControlName="producto">
 
-    <div class="mb-3"></div>
-
-    <mat-form-field style="width: 30em;" appearance="fill">
-        <mat-label class="inputText">Cantidad ingresada</mat-label>
-        <input matInput type="number" #input formControlName="cantidad">
-        <mat-error *ngIf="form.invalid">{{getErrorMessage('cantidad',form)}}</mat-error>
-    </mat-form-field>
-    
-    <div class="mb-3"></div>
-
-    <mat-form-field style="width: 30em;" appearance="fill">
-        <mat-label class="inputText">Numero de orden de compra </mat-label>
-        <input matInput type="number" #input formControlName="compra">
-        <mat-error *ngIf="form.invalid">{{getErrorMessage('compra',form)}}</mat-error>
-    </mat-form-field>
-    
-    <div class="mb-3"></div>
-
-    <mat-form-field style="width: 30em;" appearance="fill">
-        <mat-label>Observacion</mat-label>
-        <input matInput #input formControlName="observacion">
-        <mat-error *ngIf="form.invalid">{{getErrorMessage('observacion',form)}}</mat-error>
-        <textarea matInput></textarea>
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="optionSelected($event)">
+            <mat-option *ngFor="let linea of filteredLineas | async" [value]="linea.id">
+                {{linea.text}}
+              </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('producto', form)}}</mat-error>
       </mat-form-field>
+
+    <div class="mb-3"></div>
+    <p>Cant Actual:</p>
+    <div class="mb-3"></div>
+
+
+
+    <mat-form-field style="width: 30em;" appearance="fill">
+        <mat-label class="inputText">Cantidad a transferir</mat-label>
+        <input matInput type="number" #input formControlName="cantidadT">
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('cantidadT',form)}}</mat-error>
+    </mat-form-field>
 
     <div class="mb-3"></div>
 
@@ -39,10 +33,8 @@
         <button class="btn btn-primary" (click)="guardar()">
             Guardar
         </button>
-
-
     </div>
 
 
 
-</div>
+    </div>
