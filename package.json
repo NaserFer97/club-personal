@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
+    "@ng-select/ng-select": "^8.3.0",
     "@ngneat/transloco": "^4.1.1",
     "angular-sidebar-menu": "^1.5.0",
     "animate.css": "^4.1.1",

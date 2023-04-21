@@ -49,6 +49,10 @@ import { StockPremiosComponent } from './premios-tangibles/stock-premios/stock-p
 import { TrazabilidadProductosComponent } from './premios-tangibles/trazabilidad-productos/trazabilidad-productos/trazabilidad-productos.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AgenciasCrearComponent } from './premios-tangibles/agencias-entrega/agencias-entrega/agencias-crear/agencias-crear/agencias-crear.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ProductoDetalleComponent } from './premios-tangibles/stock-premios/stock-premios/producto-detalle/producto-detalle/producto-detalle.component';
+import { ResumenCanjesComponent } from './resumen-canjes/resumen-canjes/resumen-canjes.component';
+
 
 
 
@@ -89,6 +93,8 @@ import { AgenciasCrearComponent } from './premios-tangibles/agencias-entrega/age
     StockPremiosComponent,
     TrazabilidadProductosComponent,
     AgenciasCrearComponent,
+    ProductoDetalleComponent,
+    ResumenCanjesComponent,
     
     
     
@@ -113,7 +119,8 @@ import { AgenciasCrearComponent } from './premios-tangibles/agencias-entrega/age
     FormsModule,
     MatListModule,
     MatButtonModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    NgSelectModule
   ]
 })
 export class PrincipalModule { }

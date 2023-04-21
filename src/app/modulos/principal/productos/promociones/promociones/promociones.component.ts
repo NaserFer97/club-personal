@@ -5,8 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
-import { PromocionesService } from 'src/app/services/productos/promociones/promociones.service';
-
+import { ResumenCanjesService } from 'src/app/services/resumen-canjes/resumen-canjes.service';
 
 @Component({
   selector: 'app-promociones',
@@ -61,13 +60,13 @@ export class PromocionesComponent implements OnInit {
     this.listar();
   }
 
-  constructor(private router: Router, private dialog: MatDialog, private PromocionesService: PromocionesService) {
+  constructor(private router: Router, private dialog: MatDialog, private ResumenCanjesService: ResumenCanjesService) {
     this.dataSource = new MatTableDataSource(this.data,);
     ;
   }
 
   listar(){
-    this.PromocionesService.listar().subscribe(
+    this.ResumenCanjesService.listar().subscribe(
       data => {
         if (data) {
           // {

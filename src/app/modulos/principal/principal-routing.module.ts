@@ -33,6 +33,7 @@ import { ReposicionStockComponent } from './premios-tangibles/reposicion-stock-d
 import { StockPremiosComponent } from './premios-tangibles/stock-premios/stock-premios/stock-premios.component';
 import { TrazabilidadProductosComponent } from './premios-tangibles/trazabilidad-productos/trazabilidad-productos/trazabilidad-productos.component';
 import { AgenciasCrearComponent } from './premios-tangibles/agencias-entrega/agencias-entrega/agencias-crear/agencias-crear/agencias-crear.component';
+import { ResumenCanjesComponent } from './resumen-canjes/resumen-canjes/resumen-canjes.component';
 const routes: Routes = [
   {
     path: '',
@@ -71,6 +72,7 @@ const routes: Routes = [
       { path: 'premios-tangibles/stock-premios', component: StockPremiosComponent },
       { path: 'premios-tangibles/trazabilidad-productos', component: TrazabilidadProductosComponent },
       { path: 'premios-tangibles/agencias-crear', component: AgenciasCrearComponent },
+      { path: 'resumen-canjes', component: ResumenCanjesComponent },
 
 
 

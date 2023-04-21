@@ -5,12 +5,16 @@
 <div class="filter-container">
   <mat-form-field appearance="outline" class="filter-field">
     <mat-label>Desde</mat-label>
-    <input matInput placeholder="Desde">
+    <input matInput [matDatepicker]="desdePicker" placeholder="Desde">
+    <mat-datepicker-toggle matSuffix [for]="desdePicker"></mat-datepicker-toggle>
+    <mat-datepicker #desdePicker></mat-datepicker>
   </mat-form-field>
-
+  
   <mat-form-field appearance="outline" class="filter-field">
     <mat-label>Hasta</mat-label>
-    <input matInput placeholder="Hasta">
+    <input matInput [matDatepicker]="hastaPicker" placeholder="Hasta">
+    <mat-datepicker-toggle matSuffix [for]="hastaPicker"></mat-datepicker-toggle>
+    <mat-datepicker #hastaPicker></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="filter-field">

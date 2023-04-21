@@ -6,9 +6,9 @@ import { Servers } from 'src/app/config/api';
 @Injectable({
   providedIn: 'root'
 })
-export class BajaPremioService {
-
-  private baseUrl = Servers.CLUB.baseUrl + "baja-premio";
+export class ResumenCanjesService {
+ 
+  private baseUrl = Servers.CLUB.baseUrl + "resumen-canjes";
   constructor(private http: HttpClient) { }
 
   listar(): Observable<any> {

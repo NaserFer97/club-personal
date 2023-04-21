@@ -17,6 +17,15 @@
   "Eventos": "Eventos",
   "Tipo de Evento": "Tipo de Evento",
   "Cartelera": "Cartelera",
-  "Peliculas": "Peliculas"
+  "Peliculas": "Peliculas",
+  "Productos": "Productos",
+  "Promociones": "Promociones",
+  "Reposicion Stock Deposito": "Reposicion Stock Deposito",
+  "Agencias de Entrega": "Agencias de Entrega",
+  "Alta premio a Disponible": "Alta premio a Disponible",
+  "Baja premio a Deposito": "Baja premio a Deposito",
+  "Stock de Premios": "Stock de Premios",
+  "Trazabilidad productos": "Trazabilidad productos",
+  "Entregar premio": "Entregar premio"
 
 }

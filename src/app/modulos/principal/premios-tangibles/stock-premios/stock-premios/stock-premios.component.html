@@ -1,1 +1,71 @@
-<p>stock-premios works!</p>
+<h2>Stock de Productos</h2>
+
+<div style="display: flex; justify-content: end;">
+  <button (click)="crear()" class="btn btn-primary">Agregar </button>
+</div>
+
+<mat-form-field>
+  <mat-label>Filtrar resultados</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+
+<div class="mat-elevation-z2">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> codigo </th>
+      <td mat-cell *matCellDef="let row"> {{row.codigo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion </th>
+      <td mat-cell *matCellDef="let row"> {{row.descripcion}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="deposito">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> En deposito </th>
+      <td mat-cell *matCellDef="let row"> {{row.deposito}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="disponible">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Disponible </th>
+        <td mat-cell *matCellDef="let row"> {{row.disponible}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="reserva">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> En Reserva </th>
+        <td mat-cell *matCellDef="let row"> {{row.reserva}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="devuelto">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Devuelto </th>
+        <td mat-cell *matCellDef="let row"> {{row.devuelto}} </td>
+      </ng-container>
+
+  
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          <div class="actions-wrapper">
+            <button mat-icon-button (click)="verDetalle(row)">
+              <i class="icon-eye"></i>
+              <span class="tooltip">Detalle</span>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">
+        <p *ngIf="input.value">No se encontraron resultados con la palabra "{{input.value}}"</p>
+        <p *ngIf="data.length==0">No hay datos</p>
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+</div>
+

@@ -2,15 +2,21 @@
 
     <h2>Alta de productos en deposito</h2>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label class="inputText">Producto</mat-label>
-        <input matInput  #input formControlName="producto">
-        <mat-error *ngIf="form.invalid">{{getErrorMessage('producto',form)}}</mat-error>
-    </mat-form-field>
+        <input matInput [matAutocomplete]="auto" formControlName="producto">
+
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="optionSelected($event)">
+            <mat-option *ngFor="let linea of filteredLineas | async" [value]="linea.id">
+                {{linea.text}}
+              </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="form.invalid">{{getErrorMessage('producto', form)}}</mat-error>
+      </mat-form-field>
 
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Cantidad ingresada</mat-label>
         <input matInput type="number" #input formControlName="cantidad">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('cantidad',form)}}</mat-error>
@@ -18,7 +24,7 @@
     
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Numero de orden de compra </mat-label>
         <input matInput type="number" #input formControlName="compra">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('compra',form)}}</mat-error>
@@ -26,7 +32,7 @@
     
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label>Observacion</mat-label>
         <input matInput #input formControlName="observacion">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('observacion',form)}}</mat-error>

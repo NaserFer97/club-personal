@@ -2,7 +2,7 @@
 
     <h2>Detalle de Tipo Evento</h2>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label class="inputText">Descripcion</mat-label>
         <input matInput #input formControlName="tipoEvento">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('tipoEvento',form)}}</mat-error>
