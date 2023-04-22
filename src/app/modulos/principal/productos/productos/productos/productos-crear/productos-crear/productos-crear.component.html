@@ -2,7 +2,7 @@
 
     <h2>Agregar Producto</h2>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Nombre</mat-label>
         <input matInput #input formControlName="nombre">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
@@ -10,7 +10,7 @@
 
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label>Descripcion</mat-label>
         <input matInput #input formControlName="descripcion">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('descripcion',form)}}</mat-error>
@@ -19,7 +19,7 @@
 
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label class="inputText">costo</mat-label>
         <input matInput #input formControlName="costo">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('costo',form)}}</mat-error>
@@ -28,7 +28,7 @@
     <div class="mb-3"></div>
 
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Puntos</mat-label>
         <input matInput type="number" #input formControlName="puntos">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('puntos',form)}}</mat-error>
@@ -37,7 +37,7 @@
     <div class="mb-3"></div>
 
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Tipo de producto</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('tipo',form)}}</mat-error>
         <mat-select formControlName="tipo">

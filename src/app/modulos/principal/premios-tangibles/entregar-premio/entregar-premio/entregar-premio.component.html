@@ -1,6 +1,6 @@
 <div [formGroup]="form" (ngSubmit)="guardar()">
 
-<mat-form-field style="width: 30em;" appearance="fill">
+<mat-form-field  appearance="fill">
     <mat-label class="inputText">Linea</mat-label>
     <input matInput #input formControlName="linea">
     <mat-error *ngIf="form.invalid">{{getErrorMessage('linea',form)}}</mat-error>

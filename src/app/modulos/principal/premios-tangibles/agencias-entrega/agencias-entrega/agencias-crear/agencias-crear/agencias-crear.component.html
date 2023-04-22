@@ -2,7 +2,7 @@
 
     <h2>Agregar Agencia</h2>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Nombre de la Agencia</mat-label>
         <input matInput #input formControlName="nombre">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
@@ -10,7 +10,7 @@
 
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Ciudad</mat-label>
         <input matInput #input formControlName="ciudad">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('ciudad',form)}}</mat-error>
@@ -18,7 +18,7 @@
 
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Zona</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('zona',form)}}</mat-error>
         <mat-select formControlName="zona">
@@ -29,7 +29,7 @@
 
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label class="inputText">Telefono</mat-label>
         <input matInput type="number" #input formControlName="telefono">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('telefono',form)}}</mat-error>
@@ -37,7 +37,7 @@
 
     <div class="mb-3"></div>
 
-    <mat-form-field style="width: 30em;" appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label class="inputText">Direccion</mat-label>
         <input matInput #input formControlName="direccion">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('direccion',form)}}</mat-error>
