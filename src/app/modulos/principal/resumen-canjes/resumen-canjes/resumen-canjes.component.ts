@@ -1,15 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { getErrorMessage } from 'src/app/config/constants';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { MatTabChangeEvent } from '@angular/material/tabs';
-import { ListasService } from 'src/app/services/locales/listas/listas.service';
 import { TrazabilidadBeneficiosService } from 'src/app/services/locales/trazabilidad-beneficios/trazabilidad-beneficios.service';
 import { MatSelectionList } from '@angular/material/list';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ResumenDetalleComponent } from './resumen-detalle/resumen-detalle/resumen-detalle.component';
+
 
 
 
@@ -24,7 +20,7 @@ export class ResumenCanjesComponent implements OnInit {
 
 
   
-  displayedColumns2: string[] = ['id', 'producto', 'linea', 'fecha', 'cantidad','estado','agencia'];
+  displayedColumns2: string[] = ['id', 'producto', 'linea', 'fecha', 'cantidad','estado','agencia','acciones'];
   fecha = new FormControl();
 
   data: any = [
@@ -118,7 +114,7 @@ export class ResumenCanjesComponent implements OnInit {
   localId: any;
   localService: any;
 
-  constructor(private router: Router, private TrazabilidadBeneficiosService: TrazabilidadBeneficiosService) {
+  constructor(private router: Router, private TrazabilidadBeneficiosService: TrazabilidadBeneficiosService,private dialog: MatDialog) {
   
   }
 
@@ -159,5 +155,16 @@ export class ResumenCanjesComponent implements OnInit {
   volver() {
     this.router.navigateByUrl('locales-listas');
   }
+  verDetalle(row: any) {
+    const dialogRef = this.dialog.open(ResumenDetalleComponent, {
+      data: { producto: row },
+    });
+  
+    dialogRef.afterClosed().subscribe((result: any) => {
+      // Aquí puedes manejar el resultado cuando el diálogo se cierre, si es necesario
+      console.log('Dialog result:', result);
+    });
+  }
+  
 
 }

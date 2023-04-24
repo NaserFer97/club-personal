@@ -52,6 +52,9 @@ import { AgenciasCrearComponent } from './premios-tangibles/agencias-entrega/age
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ProductoDetalleComponent } from './premios-tangibles/stock-premios/stock-premios/producto-detalle/producto-detalle/producto-detalle.component';
 import { ResumenCanjesComponent } from './resumen-canjes/resumen-canjes/resumen-canjes.component';
+import { ResumenDetalleComponent } from './resumen-canjes/resumen-canjes/resumen-detalle/resumen-detalle/resumen-detalle.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -95,6 +98,7 @@ import { ResumenCanjesComponent } from './resumen-canjes/resumen-canjes/resumen-
     AgenciasCrearComponent,
     ProductoDetalleComponent,
     ResumenCanjesComponent,
+    ResumenDetalleComponent,
     
     
     
@@ -120,7 +124,8 @@ import { ResumenCanjesComponent } from './resumen-canjes/resumen-canjes/resumen-
     MatListModule,
     MatButtonModule,
     MatAutocompleteModule,
-    NgSelectModule
+    NgSelectModule,
+    MatDialogModule
   ]
 })
 export class PrincipalModule { }
