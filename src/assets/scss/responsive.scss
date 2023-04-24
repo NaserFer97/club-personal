@@ -12,6 +12,11 @@
   }
 } 
 
+.right-container{//AGREGAR LISTA
+  width: 45%;
+  padding-right: 45px;
+}
+
 /*
 ####################################################
 M E D I A  Q U E R I E S
@@ -35,6 +40,25 @@ Bootstrap 5 breakpoints
 
 
 @media (max-width: 1199px) {
+  .mat-form-field{//campo
+    width: 50%;
+  }
+
+  .right-container{//AGREGAR LISTA
+    width: 100%;
+    padding-right: 0px;
+    padding-top: 5%;
+    .search-container{
+      .mat-form-field{
+        width: 80% !important;
+      }
+    }
+  }
+
+  .middle-container{
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
   .main-header {
    
   }
@@ -42,6 +66,45 @@ Bootstrap 5 breakpoints
 }
 
 @media (max-width: 992px) {
+ 
+  .middle-container{
+    padding-right: 27px;
+    margin-top: 3em !important;
+    margin-left: 0% !important;
+    .btn{
+      width: 100%;
+    }
+    }
+  .main-container{  
+    flex-direction: column-reverse !important;
+    flex-wrap: wrap !important;
+    align-content: space-between;
+    align-items: center !important;
+  }
+  .right-container{//AGREGAR LISTA
+    width: 100%;
+    padding-right: 0px;
+    padding-top: 5%;
+    .search-container{
+      .mat-form-field{
+        width: 70% !important;
+      }
+    }
+  }
+  .mat-form-field{//campo
+    width: 70%;
+  }
+   //botones
+   .btn{
+    width: 45%;
+  }
+
+  .button-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  //----------------------
 
   .main-header {
     padding: 0px 15px; //15
@@ -101,6 +164,32 @@ Bootstrap 5 breakpoints
 }
 
 @media (max-width: 767px) {
+  .middle-container{
+    padding-right: 27px;
+    margin-top: 3em !important;
+    margin-left: 0% !important;
+    .btn{
+      width: 100%;
+    }
+    }
+  .main-container{  
+    flex-direction: column-reverse !important;
+    flex-wrap: wrap !important;
+    align-content: space-between;
+    align-items: center !important;
+  }
+  .right-container{//AGREGAR LISTA
+    width: 100%;
+    padding-right: 0px;
+    padding-top: 5%;
+    .search-container{
+      .mat-form-field{
+        width: 100% !important;
+      }
+    }
+  }
+
+
   //campo de txt
   .mat-form-field{
     width: 100%;
@@ -135,6 +224,7 @@ Bootstrap 5 breakpoints
     margin: 15px 0px !important;
     padding-left: 15px;
     padding-right: 15px;
+    padding-block-end: 15px;
   }
 
   .logo-principal {
@@ -190,8 +280,37 @@ Bootstrap 5 breakpoints
 }
 
 @media (max-width: 575px) {
+
+  .middle-container{
+    padding-right: 27px;
+    margin-top: 3em !important;
+    margin-left: 10% !important;
+    .btn{
+      width: 100%;
+    }
+    }
+  .main-container{  
+    flex-direction: column-reverse;
+    flex-wrap: wrap !important;
+    align-content: space-between;
+    align-items: center !important;
+  }
+  .right-container{//AGREGAR LISTA
+    width: 100%;
+    padding-right: 0px;
+    padding-top: 5%;
+    .search-container{
+      .mat-form-field{
+        width: 100% !important;
+      }
+    }
+  }
+ /* .scroll-container{
+    width: 85%;
+  }*/
+
   //grilla
- /* .mat-elevation-z2{
+  /*.mat-elevation-z2{
     
     .mat-table thead tr{
       display: none;
@@ -217,8 +336,8 @@ Bootstrap 5 breakpoints
     .mat-icon-button{
       text-align: right;
     }
-    .mat-table .mat-cell::before{
-      content: attr(td);
+    .mat-table .td::before{
+      content: attr(mat-row) !important;
       position: absolute;
       left: 0;
       width: 50%;
@@ -232,6 +351,8 @@ Bootstrap 5 breakpoints
  
   .filter-container{
     margin: 15px 0px;
+
+   
   }
   .mat-form-field{
     width: 100%;
@@ -256,6 +377,7 @@ Bootstrap 5 breakpoints
     margin: 15px 0px !important;
     padding-left: 15px;
     padding-right: 15px;
+    padding-block-end: 15px;
   } 
 
   .main-header {
@@ -278,13 +400,19 @@ Bootstrap 5 breakpoints
   .logo-principal {
     display: flex;
   }
+
+  
   
 }
 
 @media (min-width: 768px) {
+
   .main-wrapper.main-wrapper--navigation-open{
     .main-content{
       margin-left: 242px;
+      margin-right: 0px;
+      padding-right: 15px;
+      padding-block-end: 15px;
     }
    } 
   .main-header {
@@ -295,6 +423,7 @@ Bootstrap 5 breakpoints
   .logo-principal {
     display: none;
   }
+  
 }
 
 @media (min-width: 993px) {
@@ -306,6 +435,9 @@ Bootstrap 5 breakpoints
   .main-wrapper.main-wrapper--navigation-open{
     .main-content{
       margin-left: 243px;
+      margin-right: 0px;
+      padding-right: 15px;
+      padding-block-end: 15px;
     }
    } 
   
@@ -350,10 +482,32 @@ Bootstrap 5 breakpoints
 }
 
 @media (min-width: 1200px) {
+  .mat-form-field{//campo
+    width: 50%;
+  }
+
+  .right-container{//AGREGAR LISTA
+    width: 100%;
+    padding-right: 0px;
+    padding-top: 5%;
+    .search-container{
+      .mat-form-field{
+        width: 80% !important;
+      }
+    }
+  }
+
+  .middle-container{
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
 
    .main-wrapper.main-wrapper--navigation-open{
     .main-content{
       margin-left: 273px;//273px
+      margin-right: 0px;
+      padding-right: 15px;
+      padding-block-end: 15px;
     }
    } 
 
@@ -406,6 +560,15 @@ Bootstrap 5 breakpoints
       margin-top: 20px;
     }
   }
+
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+   // right: 325px !important;
+  }
+  .mat-form-field-wrapper{
+  //  width: 400px;
+  }
+
 }
 
 
