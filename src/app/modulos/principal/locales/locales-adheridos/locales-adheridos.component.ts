@@ -130,7 +130,7 @@ export class LocalesAdheridosComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         title: 'Confirmación',
-        message: '¿Está seguro de que desea eliminar este local?'
+        message: '¿Está seguro de que desea eliminar ?'
       }
     });
 

@@ -80,7 +80,7 @@ export class AgenciasEntregaComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         title: 'Confirmación',
-        message: '¿Está seguro de que desea eliminar esta agencia?'
+        message: '¿Está seguro de que desea eliminar esta ?'
       }
     });
 
