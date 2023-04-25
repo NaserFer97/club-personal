@@ -9,29 +9,29 @@
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
 </mat-form-field>
 
-<div class="mat-elevation-z2">
-  <table mat-table [dataSource]="dataSource" matSort>
+<div class="mat-elevation-z8">
+  <table mat-table cdkScrollable [dataSource]="dataSource" matSort>
 
     <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
-      <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+      <td mat-cell *matCellDef="let row" data-label=" Nombre"> {{row.nombre}} </td>
     </ng-container>
 
     <ng-container matColumnDef="rubro">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Rubro </th>
-      <td mat-cell *matCellDef="let row"> {{row.rubro}}</td>
+      <td mat-cell *matCellDef="let row" data-label=" Rubro"> {{row.rubro}}</td>
     </ng-container>
 
     <ng-container matColumnDef="citioweb">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> citioweb </th>
-      <td mat-cell *matCellDef="let row"> {{row.citioweb}} </td>
+      <td mat-cell *matCellDef="let row" data-label="citioweb"> {{row.citioweb}} </td>
     </ng-container>
 
   
 
     <ng-container matColumnDef="acciones">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let row">
+      <td mat-cell *matCellDef="let row" data-label=" Acciones">
         <div class="actions-wrapper">
           <button mat-icon-button (click)="editar(row)">
             <i class="icon-pencil"></i>
