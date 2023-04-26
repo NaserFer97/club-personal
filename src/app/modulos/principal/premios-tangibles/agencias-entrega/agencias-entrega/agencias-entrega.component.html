@@ -14,24 +14,24 @@
 
     <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
-      <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+      <td mat-cell *matCellDef="let row" data-label=" Nombre"> {{row.nombre}} </td>
     </ng-container>
 
     <ng-container matColumnDef="ciudad">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Ciudad </th>
-      <td mat-cell *matCellDef="let row"> {{row.ciudad}}</td>
+      <td mat-cell *matCellDef="let row" data-label=" Ciudad"> {{row.ciudad}}</td>
     </ng-container>
 
     <ng-container matColumnDef="zona">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Zona </th>
-      <td mat-cell *matCellDef="let row"> {{row.zona}} </td>
+      <td mat-cell *matCellDef="let row" data-label=" Zona"> {{row.zona}} </td>
     </ng-container>
 
   
 
     <ng-container matColumnDef="acciones">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let row">
+      <td mat-cell *matCellDef="let row" data-label=" Acciones">
         <div class="actions-wrapper">
           <button mat-icon-button (click)="editar(row)">
             <i class="icon-pencil"></i>

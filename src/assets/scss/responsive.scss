@@ -95,14 +95,14 @@ Bootstrap 5 breakpoints
     width: 70%;
   }
    //botones
-   .btn{
-    width: 45%;
-  }
 
   .button-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .btn{
+      width: 45%;
+    }
   }
   //----------------------
 
@@ -164,6 +164,7 @@ Bootstrap 5 breakpoints
 }
 
 @media (max-width: 767px) {
+
   .middle-container{
     padding-right: 27px;
     margin-top: 3em !important;
@@ -213,6 +214,90 @@ Bootstrap 5 breakpoints
     width: 100%;
     margin-left: 0px !important;
   }
+
+//____GRILLA
+  .mat-table th{
+    display: none;
+  }
+
+  .mat-table, tbody, tr, td, mat-icon-button{
+    display: block;
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  tr.mat-header-row{
+    height: 100% !important;
+  }
+  .mat-table th{
+    margin-bottom: 20px;
+    margin-top: 1.5rem;
+  }
+
+  .mat-table tbody td { 
+    text-align:  left;
+    padding-left: 35% !important;
+    position: relative;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: flex-start;
+    height: 50%;
+    align-items: center; 
+  }
+  .mat-icon-button{
+    text-align: right;
+  }
+  .mat-table td::before{
+    content: attr(data-label) " : ";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    text-align: left;
+    display: inline-block;
+  }
+  .mat-paginator{
+    padding-top: 15%;
+    text-align: center;
+    justify-content: center;  
+  }
+  .mat-paginator-container{
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    padding: 0 0px;
+    flex-wrap: nowrap !important;
+    width: 100%;
+    margin-top: 35px;
+    padding-top: 15px;  
+  }
+  .actions-wrapper{
+    justify-content: right !important;
+    padding-right: 70%;
+  }
+  th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+    border-bottom-width: 0px !important;
+    border-bottom-style: solid ;
+  }
+
+  tr.mat-row, tr.mat-footer-row {
+    height: 100% !important;
+    border-bottom: 1px solid #e2dede;
+  }
+  //Btn from
+  .ng-star-inserted{
+  .ng-untouched{
+    .btn2{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+  } 
+  } 
+//_________________________________
+
+
+
 
   .main-wrapper.main-wrapper--navigation-open{
   }
@@ -306,10 +391,7 @@ Bootstrap 5 breakpoints
     }
   }
  
-
-  //grilla
-  //.mat-elevation-z8{
-
+  //__Grilla
     .mat-table th{
       display: none;
     }
@@ -317,18 +399,19 @@ Bootstrap 5 breakpoints
     .mat-table, tbody, tr, td, mat-icon-button{
       display: block;
       width: 100%;
-      margin-bottom: 70%;
-     
+      margin-bottom: 35px;
     }
-    
+    tr.mat-header-row{
+      height: 100% !important;
+    }
     .mat-table th{
-      margin-bottom: 20px;//para separar cada dato
+      margin-bottom: 20px;
       margin-top: 1.5rem;
     }
     
-    .mat-table tbody td {//.mat-row: tr, mat-cell:td  
+    .mat-table tbody td { 
       text-align:  left;
-      padding-left: 35%;
+      padding-left: 35% !important;
       position: relative;
       margin-bottom: 5%;
       display: flex;
@@ -363,12 +446,34 @@ Bootstrap 5 breakpoints
       margin-top: 35px;
       padding-top: 15px;  
     }
-
     .actions-wrapper{
       justify-content: right !important;
       padding-right: 70%;
     }
-  //}
+    th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+      border-bottom-width: 0px !important;
+      border-bottom-style: solid ;
+    }
+
+    tr.mat-row, tr.mat-footer-row {
+      height: 100% !important;
+      border-bottom: 1px solid #e2dede;
+   }
+    //Btn from
+    .ng-star-inserted{
+    .ng-untouched{
+      .btn2{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+      }
+    } 
+   }
+ 
+     
+   
+   
  //----FIN GRILLA
   .filter-container{
     margin: 15px 0px;
@@ -387,15 +492,16 @@ Bootstrap 5 breakpoints
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .btn{
+      width: 45%;
+    }
   }
 
   .mat-form-field-flex{
     width: 100%;
   }
 
-  .btn{
-    width: 45%;
-  }
+ 
   .main-content{
     margin: 15px 0px !important;
     padding-left: 15px;
