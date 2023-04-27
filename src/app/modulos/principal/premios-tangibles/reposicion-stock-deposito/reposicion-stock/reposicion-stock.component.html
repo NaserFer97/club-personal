@@ -2,7 +2,7 @@
 
     <h2>Alta de productos en deposito</h2>
 
-    <mat-form-field class="margin-bottom1"  appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Producto</mat-label>
         <input matInput [matAutocomplete]="auto" formControlName="producto">
 
@@ -15,21 +15,21 @@
       </mat-form-field>
 
 
-    <mat-form-field class="margin-bottom1" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Cantidad ingresada</mat-label>
         <input matInput type="number" #input formControlName="cantidad">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('cantidad',form)}}</mat-error>
     </mat-form-field>
     
 
-    <mat-form-field class="margin-bottom1"  appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Numero de orden de compra </mat-label>
         <input matInput type="number" #input formControlName="compra">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('compra',form)}}</mat-error>
     </mat-form-field>
     
 
-    <mat-form-field  class="margin-bottom1" appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label>Observacion</mat-label>
         <input matInput #input formControlName="observacion">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('observacion',form)}}</mat-error>

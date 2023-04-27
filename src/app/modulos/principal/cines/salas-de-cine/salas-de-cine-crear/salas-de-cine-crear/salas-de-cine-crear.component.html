@@ -2,7 +2,7 @@
 
     <h2>Nueva sala de cine</h2>
 
-    <mat-form-field class="margin-bottom1" appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label class="inputText">Nombre del Local</mat-label>
         <input matInput #input formControlName="nombre">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
@@ -10,7 +10,7 @@
     
    
 
-    <mat-form-field class="margin-bottom1"  appearance="fill">
+    <mat-form-field   appearance="fill">
         <mat-label>Sitio web</mat-label>
         <input matInput #input formControlName="sitioWeb">
     </mat-form-field>
