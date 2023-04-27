@@ -2,42 +2,38 @@
 
     <h2>Agregar Producto</h2>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="margin-bottom1" appearance="fill">
         <mat-label class="inputText">Nombre</mat-label>
         <input matInput #input formControlName="nombre">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="margin-bottom1" appearance="fill">
         <mat-label>Descripcion</mat-label>
         <input matInput #input formControlName="descripcion">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('descripcion',form)}}</mat-error>
         <textarea matInput></textarea>
       </mat-form-field>
 
-    <div class="mb-3"></div>
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field class="margin-bottom1" appearance="fill">
         <mat-label class="inputText">costo</mat-label>
         <input matInput #input formControlName="costo">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('costo',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="margin-bottom1" appearance="fill">
         <mat-label class="inputText">Puntos</mat-label>
         <input matInput type="number" #input formControlName="puntos">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('puntos',form)}}</mat-error>
     </mat-form-field>
     
-    <div class="mb-3"></div>
 
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="margin-bottom1" appearance="fill">
         <mat-label class="inputText">Tipo de producto</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('tipo',form)}}</mat-error>
         <mat-select formControlName="tipo">
@@ -48,11 +44,9 @@
         </mat-select>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
     <section class="example-section">
-        <mat-checkbox class="example-margin" formControlName="disponible">Disponible</mat-checkbox>
-        <div class="mb-3"></div>
+        <mat-checkbox class="margin-bottom1" class="example-margin" formControlName="disponible">Disponible</mat-checkbox>
         <mat-checkbox class="example-margin" formControlName="aplicable">Aplicable a combo</mat-checkbox>
     </section>
 

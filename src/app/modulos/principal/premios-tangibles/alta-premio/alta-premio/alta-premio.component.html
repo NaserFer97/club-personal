@@ -3,7 +3,7 @@
     <h2>Alta de Premio</h2>
     <h3>Seleccione el producto e ingrese la Cantidad</h3>
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field class="margin-bottom1"  appearance="fill">
         <mat-label class="inputText">Producto</mat-label>
         <input matInput [matAutocomplete]="auto" formControlName="producto">
 
@@ -15,19 +15,16 @@
         <mat-error *ngIf="form.invalid">{{getErrorMessage('producto', form)}}</mat-error>
       </mat-form-field>
 
-    <div class="mb-3"></div>
-    <p>Cant Actual:</p>
-    <div class="mb-3"></div>
+    <p class="margin-bottom1">Cant Actual:</p>
 
 
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field class="margin-bottom1"  appearance="fill">
         <mat-label class="inputText">Cantidad a transferir</mat-label>
         <input matInput type="number" #input formControlName="cantidadT">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('cantidadT',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
     <div style="margin-top: 3em;" class="button-container">
         <button class="btn btn-primary" (click)="guardar()">

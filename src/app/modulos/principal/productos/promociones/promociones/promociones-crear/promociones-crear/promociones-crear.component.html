@@ -1,22 +1,20 @@
 <div [formGroup]="form" (ngSubmit)="guardar()">
 
     <h2>Agregar Promocion</h2>
-
-    <mat-form-field appearance="fill">
+ 
+    <mat-form-field class="margin-bottom1" appearance="fill">
         <mat-label class="inputText">Descripcion</mat-label>
         <input matInput #input formControlName="tipoEvento">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('tipoEvento',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
-    <mat-form-field appearance="fill">
+    <mat-form-field class="margin-bottom1" appearance="fill">
         <mat-label class="inputText">Palabra clave</mat-label>
         <input matInput #input formControlName="palabra">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('palabra',form)}}</mat-error>
     </mat-form-field>
-    <div class="mb-3"></div>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field class="margin-bottom1" appearance="fill">
         <mat-label class="inputText">Fecha Desde</mat-label>
         <input matInput [matDatepicker]="pickerFechaDesde" formControlName="fechaDesde">
         <mat-datepicker-toggle matSuffix [for]="pickerFechaDesde"></mat-datepicker-toggle>
@@ -24,7 +22,6 @@
         <mat-error *ngIf="form.invalid">{{getErrorMessage('fechaDesde',form)}}</mat-error>
     </mat-form-field>
     
-    <div class="mb-3"></div>
     
     <mat-form-field appearance="fill">
         <mat-label class="inputText">Fecha Hasta</mat-label>
