@@ -2,15 +2,15 @@
 
     <h2>Agregar Evento</h2>
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field   appearance="fill">
         <mat-label class="inputText">Nombre</mat-label>
         <input matInput #input formControlName="nombre">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
+    
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field   appearance="fill">
         <mat-label class="inputText">Tipo Evento</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('tipoEvento',form)}}</mat-error>
         <mat-select formControlName="tipoEvento">
@@ -21,9 +21,9 @@
         </mat-select>
     </mat-form-field>
 
-    <div class="mb-3"></div>
+    
 
-    <mat-form-field appearance="fill">
+    <mat-form-field  appearance="fill">
         <mat-label class="inputText">Tipo Beneficio</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('tipoBeneficio',form)}}</mat-error>
         <mat-select formControlName="tipoBeneficio">
@@ -34,9 +34,9 @@
         </mat-select>
     </mat-form-field>
 
-    <div class="mb-3"></div>
+   
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field   appearance="fill">
         <mat-label class="inputText">Lugar</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('lugar',form)}}</mat-error>
         <mat-select formControlName="lugar">
@@ -47,9 +47,8 @@
         </mat-select>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field   appearance="fill">
         <mat-label class="inputText">Puntos de Venta</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('puntoVenta',form)}}</mat-error>
         <mat-select formControlName="puntoVenta">
@@ -60,7 +59,6 @@
         </mat-select>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
     <mat-form-field  appearance="fill">
         <mat-label>Descripcion</mat-label>
@@ -69,9 +67,8 @@
         <textarea matInput></textarea>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field   appearance="fill">
         <mat-label class="inputText">Fecha Desde</mat-label>
         <input matInput [matDatepicker]="pickerFechaDesde" formControlName="fechaDesde">
         <mat-datepicker-toggle matSuffix [for]="pickerFechaDesde"></mat-datepicker-toggle>
@@ -79,7 +76,6 @@
         <mat-error *ngIf="form.invalid">{{getErrorMessage('fechaDesde',form)}}</mat-error>
     </mat-form-field>
     
-    <div class="mb-3"></div>
     
     <mat-form-field  appearance="fill">
         <mat-label class="inputText">Fecha Hasta</mat-label>

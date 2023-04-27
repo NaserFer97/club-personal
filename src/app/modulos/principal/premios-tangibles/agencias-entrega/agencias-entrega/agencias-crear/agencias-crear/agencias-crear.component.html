@@ -8,7 +8,6 @@
         <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
     <mat-form-field appearance="fill">
         <mat-label class="inputText">Ciudad</mat-label>
@@ -16,7 +15,6 @@
         <mat-error *ngIf="form.invalid">{{getErrorMessage('ciudad',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
     <mat-form-field appearance="fill">
         <mat-label class="inputText">Zona</mat-label>
@@ -27,15 +25,13 @@
         </mat-select>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
-    <mat-form-field  appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label class="inputText">Telefono</mat-label>
         <input matInput type="number" #input formControlName="telefono">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('telefono',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
     <mat-form-field  appearance="fill">
         <mat-label class="inputText">Direccion</mat-label>
@@ -43,7 +39,6 @@
         <mat-error *ngIf="form.invalid">{{getErrorMessage('direccion',form)}}</mat-error>
     </mat-form-field>
 
-    <div class="mb-3"></div>
 
     <div style="margin-top: 3em;" class="button-container">
         <button class="btn btn-primary" (click)="guardar()">

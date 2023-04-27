@@ -3,12 +3,11 @@
   <h2> Agregar lista </h2>
 
 
-  <mat-form-field appearance="fill">
+  <mat-form-field  appearance="fill">
     <mat-label class="inputText">Nombre</mat-label>
     <input matInput #input formControlName="nombre">
     <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
   </mat-form-field>
-  <div class="mb-3"></div>
 
   <mat-form-field appearance="fill">
     <mat-label>Descripcion</mat-label>

@@ -2,13 +2,13 @@
 
     <h2>Datos del Local Adherido</h2>
 
-    <mat-form-field appearance="fill">
-        <mat-label class="inputText">Nombre del Local</mat-label>
+    <mat-form-field  appearance="fill">
+        <mat-label  class="inputText">Nombre del Local</mat-label>
         <input matInput #input formControlName="nombre">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
     </mat-form-field>
-    <div class="mb-3"></div>
-    <mat-form-field appearance="fill">
+
+    <mat-form-field  appearance="fill">
         <mat-label class="inputText">Rubro</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('rubro',form)}}</mat-error>
         <mat-select formControlName="rubro">
@@ -18,12 +18,12 @@
             <mat-option value="tecnologia">Tecnologia</mat-option>
         </mat-select>
     </mat-form-field>
-    <div class="mb-3"></div>
-    <mat-form-field appearance="fill">
+    
+    <mat-form-field  appearance="fill">
         <mat-label>Sitio web</mat-label>
         <input matInput #input formControlName="sitioWeb">
     </mat-form-field>
-    <div class="mb-3"></div>
+    
     <mat-form-field appearance="fill">
         <mat-label class="inputText">Fecha</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="fecha">
@@ -31,12 +31,12 @@
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('fecha',form)}}</mat-error>
     </mat-form-field>
-    <section class="example-section">
-        <mat-checkbox class="example-margin" formControlName="destacado">Destacado</mat-checkbox>
-        <div class="mb-3"></div>
+    <section class="example-section ">
+        <mat-checkbox class="example-margin margin-bottom1"  formControlName="destacado">Destacado</mat-checkbox>
+        
         <mat-checkbox class="example-margin" formControlName="mostrarEnApp">Mostrar en App</mat-checkbox>
     </section>
-    <div class="mb-3"></div>
+    
     <div class="example-container">
         <mat-form-field appearance="fill" >
             <mat-label class="inputText">Email</mat-label>
@@ -44,7 +44,7 @@
             <mat-error *ngIf="form.invalid">{{getErrorMessage('email',form)}}</mat-error>
         </mat-form-field>
     </div>
-    <div class="mb-3"></div>
+    
     <mat-form-field  appearance="fill">
         <mat-label class="inputText">Tipo Local</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('tipoLocal',form)}}</mat-error>

@@ -7,7 +7,7 @@
         <input matInput #input formControlName="descripcion">
         <mat-error *ngIf="form.invalid">{{getErrorMessage('descripcion',form)}}</mat-error>
     </mat-form-field>
-    <div class="mb-3"></div>
+
     <mat-form-field appearance="fill">
         <mat-label class="inputText">Codigo</mat-label>
         <mat-error *ngIf="form.invalid">{{getErrorMessage('codigo',form)}}</mat-error>

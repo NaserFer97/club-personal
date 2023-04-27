@@ -3,13 +3,13 @@
 
         <h2>Pelicula</h2>
 
-        <mat-form-field  appearance="fill">
+        <mat-form-field appearance="fill">
             <mat-label class="inputText">Nombre </mat-label>
             <input matInput #input formControlName="nombre">
             <mat-error *ngIf="form.invalid">{{getErrorMessage('nombre',form)}}</mat-error>
         </mat-form-field>
-        <div class="mb-3"></div>
-        <mat-form-field  appearance="fill">
+        
+        <mat-form-field   appearance="fill">
             <mat-label class="inputText">Genero</mat-label>
             <mat-error *ngIf="form.invalid">{{getErrorMessage('genero',form)}}</mat-error>
             <mat-select formControlName="genero">
@@ -19,43 +19,38 @@
                 <mat-option value="Suspenso">Tecnologia</mat-option>
             </mat-select>
         </mat-form-field>
-        <div class="mb-3"></div>
-
+        
         <mat-form-field  appearance="fill">
             <mat-label class="inputText">Clasificacion </mat-label>
             <input matInput #input formControlName="clasificacion">
             <mat-error *ngIf="form.invalid">{{getErrorMessage('clasificacion',form)}}</mat-error>
         </mat-form-field>
-        <div class="mb-3"></div>
+        
 
-        <mat-form-field  appearance="fill">
+        <mat-form-field   appearance="fill">
             <mat-label class="inputText">Actores </mat-label>
             <input matInput #input formControlName="actores">
             <mat-error *ngIf="form.invalid">{{getErrorMessage('actores',form)}}</mat-error>
         </mat-form-field>
-        <div class="mb-3"></div>
 
-        <mat-form-field  appearance="fill">
+        <mat-form-field   appearance="fill">
             <mat-label class="inputText">Director </mat-label>
             <input matInput #input formControlName="director">
             <mat-error *ngIf="form.invalid">{{getErrorMessage('director',form)}}</mat-error>
         </mat-form-field>
-        <div class="mb-3"></div>
 
-        <mat-form-field  appearance="fill">
+        <mat-form-field   appearance="fill">
             <mat-label>Sitio web</mat-label>
             <input matInput #input formControlName="sitioWeb">
         </mat-form-field>
-        <div class="mb-3"></div>
 
-        <mat-form-field  appearance="fill">
+        <mat-form-field   appearance="fill">
             <mat-label class="inputText">Triler </mat-label>
             <input matInput #input formControlName="trailer">
             <mat-error *ngIf="form.invalid">{{getErrorMessage('trailer',form)}}</mat-error>
         </mat-form-field>
-        <div class="mb-3"></div>
 
-        <mat-form-field  appearance="fill">
+        <mat-form-field   appearance="fill">
             <mat-label>Sinopsis</mat-label>
             <input matInput #input formControlName="sinopsis">
             <mat-error *ngIf="form.invalid">{{getErrorMessage('sinopsis',form)}}</mat-error>
@@ -63,7 +58,6 @@
         </mat-form-field>
 
 
-        <div class="mb-3"></div>
 
 
         <div style="margin-top: 3em;" class="button-container">
