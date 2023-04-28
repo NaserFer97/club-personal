@@ -384,8 +384,9 @@ Bootstrap 5 breakpoints
   .right-container{
     width: 50%; /* Cambiado a 50% */
     padding-top: 5%;
-    .search-container{
-      .mat-form-field{
+
+    .search-container {
+      .mat-form-field {
         width: 100% !important;
       }
     }
