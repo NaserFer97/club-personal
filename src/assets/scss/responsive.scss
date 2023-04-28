@@ -362,21 +362,27 @@ Bootstrap 5 breakpoints
 
 @media (max-width: 575px) {
 
-  .middle-container{
-    .btn{
-      width: 100%;
-    }
-    }
-  .main-container{  
-    display: flex;
-    flex-direction: row;//row, column-reverse
-    justify-content: center;
-    align-items: center;
-    
+  .main-content{//se elimino los espacio de los lados
+    padding: 0 !important;
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+       padding-bottom: 0 !important;
+     }
   }
-  .right-container{//AGREGAR LISTA
-    width: 45%;//100
-   
+  .main-container{
+    display: flex;
+    flex-wrap: wrap;/* Añade wrap para permitir que los elementos se ajusten al espacio disponible */
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 !important;
+  }
+  .main-content .outlet{
+    padding: 0px 15px 0px 10px;
+  }
+  .fontsize{
+    font-size:19px
+  }
+  .right-container{
+    width: 50%; /* Cambiado a 50% */
     padding-top: 5%;
     .search-container{
       .mat-form-field{
@@ -384,8 +390,39 @@ Bootstrap 5 breakpoints
       }
     }
   }
- 
-  //__Grilla
+  .scroll-container{
+    order: 1; /* Mantiene el left-container arriba */
+  }
+
+  .right-container{
+    order: 2; /* Mantiene el right-container en el medio */
+    margin-left: 5px;
+  }
+
+  .middle-container{
+    order: 3;  /* Mantiene el middle-container al final */
+    width: 80%;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em !important;
+    justify-content: space-between;
+    gap: 5px;
+    margin-left: 11.5% !important;
+    .btn{
+      width: 100%;
+    }
+  }
+
+  .scroll-container, .right-container{
+    border-color: #e4e4e4 !important;
+    background-color: white !important;
+    padding: 0 !important;
+  }
+   
+
+  /* Grilla */
     .mat-table th{
       display: none;
     }
@@ -463,12 +500,8 @@ Bootstrap 5 breakpoints
         flex-direction: row-reverse;
       }
     } 
-   }
+   }  
  
-     
-   
-   
- //----FIN GRILLA
   .filter-container{
     margin: 15px 0px;
   }
@@ -495,7 +528,6 @@ Bootstrap 5 breakpoints
     width: 100%;
   }
 
- 
   .main-content{
     margin: 15px 0px !important;
     padding-left: 15px;
