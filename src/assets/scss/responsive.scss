@@ -12,7 +12,7 @@
   }
 } 
 
-.right-container{//AGREGAR LISTA
+.right-container{
   width: 45%;
   padding-right: 45px;
 }
@@ -40,14 +40,12 @@ Bootstrap 5 breakpoints
 
 
 @media (max-width: 1199px) {
-  .mat-form-field{//campo
+  .mat-form-field{
     width: 50%;
   }
-
-  .right-container{//AGREGAR LISTA
+  .right-container{
     width: 100%;
     padding-right: 0px;
-    padding-top: 5%;
     .search-container{
       .mat-form-field{
         width: 80% !important;
@@ -60,14 +58,17 @@ Bootstrap 5 breakpoints
     margin-right: 15px !important;
   }
   .main-header {
-   
   }
-
+  .filter-container{
+    .search-button{
+      margin-block-end: 30px;
+      margin-left: 0px !important;
+    }
+  }
 }
 
 @media (max-width: 992px) {
   
-
   .middle-container{
     .btn{
       width: 100%;
@@ -79,20 +80,18 @@ Bootstrap 5 breakpoints
       width: 100%;
     }
   }
-  .right-container{//AGREGAR LISTA
+  .right-container{
     width: 45%;
     padding-right: 0px;
-    padding-top: 5%;
     .search-container{
       .mat-form-field{
         width: 100% !important;
       }
     }
   }
-  .mat-form-field{//campo
+  .mat-form-field{
     width: 70%;
   }
-   //botones
 
   .button-container{
     display: flex;
@@ -102,15 +101,20 @@ Bootstrap 5 breakpoints
       width: 45%;
     }
   }
-  //----------------------
+  .filter-container{
+    .search-button{
+      margin-block-end: 30px;
+      margin-left: 0px !important;
+    }
+  }
 
   .main-header {
-    padding: 0px 15px; //15
+    padding: 0px 15px; 
     justify-content: space-between;
   }
 
   .main-header {
-    margin: 0px 231px; //45px, 231
+    margin: 0px 231px; 
     position: fixed;
     background-color: white;
     z-index: 999;
@@ -124,7 +128,7 @@ Bootstrap 5 breakpoints
     display: flex !important;
   }
   .main-wrapper {
-    grid-template-rows: 100px auto !important; //55px
+    grid-template-rows: 100px auto !important; 
   }
   
   .data-user {
@@ -164,11 +168,10 @@ Bootstrap 5 breakpoints
 @media (max-width: 767px) {
 
   .middle-container{
-    
     .btn{
       width: 100%;
     }
-    }
+   }
   .main-container{  
     align-items: center !important;
     .mat-form-field-flex .ng-tns-c68-4{
@@ -178,7 +181,6 @@ Bootstrap 5 breakpoints
   .right-container{//AGREGAR LISTA
     width: 100%;
     padding-right: 0px;
-    padding-top: 5%;
     .search-container{
       .mat-form-field{
         width: 100% !important;
@@ -362,7 +364,6 @@ Bootstrap 5 breakpoints
 
 @media (max-width: 575px) {
 
- 
   .main-container{
     display: flex;
     flex-wrap: wrap;/* Añade wrap para permitir que los elementos se ajusten al espacio disponible */
@@ -599,12 +600,12 @@ Bootstrap 5 breakpoints
   }
 
   .main-header {
-    padding: 0px 15px; //15
+    padding: 0px 15px; 
     justify-content: space-between;
   }
 
   .main-header {
-    margin: 0px 231px; //45px, 231
+    margin: 0px 231px; 
     position: fixed;
     background-color: white;
     z-index: 999;
@@ -635,6 +636,14 @@ Bootstrap 5 breakpoints
 }
 
 @media (min-width: 1200px) {
+
+  .filter-container{
+    .search-button{
+      margin-block-end: 30px;
+      margin-left: 0px !important;
+    }
+  }
+
   .mat-form-field{//campo
     width: 50%;
   }
@@ -642,7 +651,6 @@ Bootstrap 5 breakpoints
   .right-container{//AGREGAR LISTA
     width: 100%;
     padding-right: 0px;
-    padding-top: 5%;
     .search-container{
       .mat-form-field{
         width: 80% !important;
@@ -714,13 +722,6 @@ Bootstrap 5 breakpoints
     }
   }
 
-  
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-   // right: 325px !important;
-  }
-  .mat-form-field-wrapper{
-  //  width: 400px;
-  }
 
 }
 
