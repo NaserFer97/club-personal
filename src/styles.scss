@@ -958,11 +958,37 @@ table {
 
 .main-navigation {
   grid-area: nav;
-  position: absolute;
+  position: relative;
   background: #121212;
   height: 100%;
   z-index: 999;
+  overflow: auto;
+
 }
+.main-navigation::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.main-navigation::-webkit-scrollbar-thumb {
+  background-color:rgba(179,179,179,255);
+  border-radius: 4px;
+}
+
+.main-navigation::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(179,179,179,255);
+}
+
+.main-navigation {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(179,179,179,255) transparent;
+}
+
+.main-navigation:hover {
+  scrollbar-color: rgba(179,179,179,255) transparent;
+}
+
+
 .main-navigation {
   width: 0px;
 }
